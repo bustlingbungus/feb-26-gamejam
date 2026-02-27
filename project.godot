@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Feb26_GAMEJAM"
+run/main_scene="uid://r3a3g6q5mw28"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://6rcqcqtbdno3"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [physics]
 
