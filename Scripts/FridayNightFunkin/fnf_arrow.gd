@@ -35,7 +35,7 @@ func Init(pos : Vector2, target : Vector2, dir : Glob.ArrowDir, moveSpeed : floa
 		Glob.ArrowDir.LEFT:
 			satisfyAction = "ui_left"
 			global_rotation = deg_to_rad(270)
-		Glob.ArrowDir.UP:
+		Glob.ArrowDir.RIGHT:
 			satisfyAction = "ui_right"
 			global_rotation = deg_to_rad(90)
 

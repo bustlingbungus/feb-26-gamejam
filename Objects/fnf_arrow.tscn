@@ -7,5 +7,5 @@
 script = ExtResource("1_mrp1m")
 
 [node name="UpArrow" type="Sprite2D" parent="." unique_id=1481892915]
-scale = Vector2(0.27, 0.27)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("1_1apck")

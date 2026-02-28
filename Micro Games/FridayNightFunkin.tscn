@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b0wfpe8b822hb"]
+[gd_scene format=3 uid="uid://bf5w1syckrlsx"]
 
 [ext_resource type="Texture2D" uid="uid://mq16jqab3kf6" path="res://Assets/Art/FridayNightFunkin/fnfgirl.png" id="1_on4ia"]
 [ext_resource type="Script" uid="uid://c7u0igllbt4nk" path="res://Scripts/FridayNightFunkin/fnf_arrow_spawner.gd" id="2_dj1b5"]
@@ -8,16 +8,22 @@
 
 [node name="FridayNightFunkin" type="Node2D" unique_id=1417410151]
 
-[node name="ArrowSpawner" type="Node" parent="." unique_id=1285187881]
+[node name="ArrowSpawner" type="Node" parent="." unique_id=1285187881 node_paths=PackedStringArray("arrowManager")]
 script = ExtResource("2_dj1b5")
 arrow_scene = ExtResource("3_dj1b5")
+arrowManager = NodePath("../ArrowManager")
 
 [node name="ArrowManager" type="Node" parent="." unique_id=938459044 node_paths=PackedStringArray("ArrowSpawner", "fnfgirl", "fnfboy")]
 script = ExtResource("4_t7bki")
 ArrowSpawner = NodePath("../ArrowSpawner")
-ArrowSpeed = 300.0
 fnfgirl = NodePath("../fnfgirl")
 fnfboy = NodePath("../fnfboy")
+TimeBetweenTurns = 2.0
+ArrowSpeed = 300.0
+ArrowCountRange = Vector2i(3, 5)
+SpawnScaling = 1.8
+CountScaling = 0.7
+TurnScaling = 0.7
 
 [node name="fnfboy" type="Node2D" parent="." unique_id=1871352549]
 position = Vector2(200, 500)
