@@ -11,4 +11,16 @@ enum ArrowDir
 }
 
 
-var micro_counter = 0
+var score = 0
+var lives
+
+func add_score():
+	score += 1
+	
+
+func lose_lives():
+	lives -= 1
+
+
+func game_over():
+	pass
