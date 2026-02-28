@@ -3,6 +3,11 @@ extends Node2D
 @export var Games = []
 
 @onready var dogshow = "res://Scenes/dog_show.tscn"
+@onready var ender: AnimatedSprite2D = $Ender
+@onready var starter: AnimatedSprite2D = $Starter
+
+
+
 
 var rng = RandomNumberGenerator.new()
 var prev_game
@@ -19,14 +24,9 @@ func _process(delta: float) -> void:
 
 # Scene Switcher
 func switch():
-		rng.randomize()
-		var x = rng.randi_range(0, Games.size() - 1)
-		# Swithces scenes
-		get_tree().change_scene_to_file(Games[x])
-		Global.next_microgame = x
-		Global.dog_display = x
-		Global.controls_display = x
-		
+	# Swithces scenes
+	get_tree().change_scene_to_file(Games[Global.next_microgame])
+	
 
 
 func intermission_switch():
@@ -35,3 +35,21 @@ func intermission_switch():
 	# Swithces scenes
 	Global.next_microgame = x
 	get_tree().change_scene_to_file(dogshow)
+	
+
+
+func menu_switch():
+	rng.randomize()
+	var x = rng.randi_range(0, Games.size() - 1)
+	# Swithces scenes
+	Global.next_microgame = x
+	get_tree().change_scene_to_file(dogshow)
+
+
+func play_anim():
+	ender.show()
+	ender.play("default")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	intermission_switch()

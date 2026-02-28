@@ -5,12 +5,16 @@ extends Node2D
 @onready var dog = $Dog
 @onready var sound_manager = $SoundManager
 @onready var music_manager = $MusicManager
+@onready var micro_swticher: Node2D = $"Micro-Swticher"
+
 
 var shot = 1
 
 func _ready() -> void:
+	micro_swticher.starter.show()
 	music_manager.load_sound("res://Assets/Sounds/SnapShot/pgfindingdog.mp3")
 	music_manager.audio_player.play()
+	micro_swticher.starter.play()
 
 
 func _process(delta: float) -> void:
@@ -40,6 +44,8 @@ func caught_result():
 	else:
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/pgwrong.mp3")
 		sound_manager.audio_player.play()
+	#await get_tree().create_timer(3).timeout
+	micro_swticher.play_anim()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

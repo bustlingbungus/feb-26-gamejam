@@ -2,15 +2,25 @@
 
 [ext_resource type="Script" uid="uid://8mrvairp20t2" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://ffn8caxf7lg6" path="res://Assets/Art/DogShow/Start-Screen.png" id="2_jr6u5"]
 [ext_resource type="Texture2D" uid="uid://cpt6kp1u6u6ik" path="res://Assets/Art/DogShow/Curtains 2/Curtain0000.png" id="3_6dk6o"]
+[ext_resource type="Texture2D" uid="uid://blvocaa45r8g0" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0000.png" id="3_jw7lb"]
+[ext_resource type="Texture2D" uid="uid://bxsvlgkqnyq0w" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0001.png" id="4_6vfk8"]
 [ext_resource type="Texture2D" uid="uid://6j7o7y6hsvg6" path="res://Assets/Art/DogShow/Curtains 2/Curtain0001.png" id="4_jr6u5"]
+[ext_resource type="Texture2D" uid="uid://dvfh5mg4okulf" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0002.png" id="5_1xund"]
 [ext_resource type="Texture2D" uid="uid://c3b5ljgaodttp" path="res://Assets/Art/DogShow/Curtains 2/Curtain0002.png" id="5_6m47u"]
 [ext_resource type="Texture2D" uid="uid://dev1adxf303y0" path="res://Assets/Art/DogShow/Curtains 2/Curtain0003.png" id="6_84iac"]
+[ext_resource type="Texture2D" uid="uid://blhll24k7tp65" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0003.png" id="6_msuys"]
 [ext_resource type="Texture2D" uid="uid://bfn7r1x5todup" path="res://Assets/Art/DogShow/Curtains 2/Curtain0004.png" id="7_5n0dv"]
+[ext_resource type="Texture2D" uid="uid://cnv5fd7yfkc7u" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0004.png" id="7_aylim"]
 [ext_resource type="Texture2D" uid="uid://b3c2hrdp3k4qr" path="res://Assets/Art/DogShow/Curtains 2/Curtain0005.png" id="8_ne6ao"]
+[ext_resource type="Texture2D" uid="uid://bfkfmv8rk0us2" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0005.png" id="8_y82t1"]
+[ext_resource type="Texture2D" uid="uid://blwikvtyaijse" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0006.png" id="9_bmhhk"]
 [ext_resource type="Texture2D" uid="uid://tdb7e1wkgwqo" path="res://Assets/Art/DogShow/Curtains 2/Curtain0006.png" id="9_tt8ml"]
 [ext_resource type="Texture2D" uid="uid://r2n6cqsjf70i" path="res://Assets/Art/DogShow/Curtains 2/Curtain0007.png" id="10_fmarx"]
+[ext_resource type="Texture2D" uid="uid://cp1sqrx78gmw8" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0007.png" id="10_pddej"]
 [ext_resource type="Texture2D" uid="uid://cj4ncloba8aod" path="res://Assets/Art/DogShow/Curtains 2/Curtain0008.png" id="11_hkdq0"]
+[ext_resource type="Texture2D" uid="uid://tj8qghm6nskh" path="res://Assets/Art/DogShow/DogDoin-startText/flashes0008.png" id="11_ko05x"]
 [ext_resource type="Texture2D" uid="uid://danukdmjk07vk" path="res://Assets/Art/DogShow/Curtains 2/Curtain0009.png" id="12_xcoo4"]
 [ext_resource type="Texture2D" uid="uid://btab2bkksoskt" path="res://Assets/Art/DogShow/Curtains 2/Curtain0010.png" id="13_jw7lb"]
 [ext_resource type="Texture2D" uid="uid://bvfwlkubyl2bc" path="res://Assets/Art/DogShow/Curtains 2/Curtain0011.png" id="14_6vfk8"]
@@ -22,6 +32,53 @@
 [ext_resource type="Texture2D" uid="uid://bmscr5rpe5lja" path="res://Assets/Art/DogShow/Curtains 2/Curtain0017.png" id="20_pddej"]
 [ext_resource type="Texture2D" uid="uid://df0cck1bm8k5n" path="res://Assets/Art/DogShow/Curtains 2/Curtain0018.png" id="21_ko05x"]
 [ext_resource type="Texture2D" uid="uid://c7vahxb6tt6jc" path="res://Assets/Art/DogShow/Curtains 2/Curtain0019.png" id="22_43km2"]
+[ext_resource type="Texture2D" uid="uid://n7vanu5ysoae" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0000.png" id="33_43km2"]
+[ext_resource type="Texture2D" uid="uid://dgvl5hg51lcfp" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0001.png" id="34_3533h"]
+[ext_resource type="Texture2D" uid="uid://pakuwg0a352i" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0002.png" id="35_dp8uv"]
+[ext_resource type="Texture2D" uid="uid://c56ug6ui08mss" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0003.png" id="36_uu0lx"]
+[ext_resource type="Texture2D" uid="uid://byioqnodvndyw" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0004.png" id="37_ujm45"]
+[ext_resource type="Texture2D" uid="uid://bvmhqgxgrqqvt" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0005.png" id="38_aj2v6"]
+[ext_resource type="Texture2D" uid="uid://cyikv8he6g1ca" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0006.png" id="39_vj5y7"]
+[ext_resource type="Texture2D" uid="uid://k2rdvi37rkne" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0007.png" id="40_3l6me"]
+[ext_resource type="Texture2D" uid="uid://dvbyvyxnontod" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0008.png" id="41_y17f6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43km2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jw7lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6vfk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1xund")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msuys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aylim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y82t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bmhhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pddej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ko05x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr6u5"]
+bg_color = Color(0.13319641, 0.13319641, 0.13319635, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3533h"]
 animations = [{
@@ -91,6 +148,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hovqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_43km2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3533h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_dp8uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_uu0lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ujm45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_aj2v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_vj5y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_3l6me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_y17f6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Main_Menu" type="Control" unique_id=1449844415]
 layout_mode = 3
 anchors_preset = 15
@@ -100,31 +192,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="Title" type="Label" parent="." unique_id=569045865]
-layout_mode = 0
-offset_left = 185.0
-offset_top = 25.0
-offset_right = 931.0
-offset_bottom = 135.0
-theme_override_font_sizes/font_size = 80
-text = "Dog The Dog Doin ?"
+[node name="BG" type="Sprite2D" parent="." unique_id=1669102682]
+position = Vector2(569, 348.49997)
+scale = Vector2(0.6895834, 0.73796296)
+texture = ExtResource("2_jr6u5")
+
+[node name="Title" type="AnimatedSprite2D" parent="." unique_id=1063739145]
+position = Vector2(586.9998, 290)
+scale = Vector2(0.559375, 0.47685185)
+sprite_frames = SubResource("SpriteFrames_43km2")
+autoplay = "default"
+frame_progress = 0.38574892
+speed_scale = 0.3
 
 [node name="Start" type="Button" parent="." unique_id=1962408262]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 394.0
-offset_right = 594.0
-offset_bottom = 450.0
+offset_left = 529.0
+offset_top = 240.0
+offset_right = 650.0
+offset_bottom = 315.0
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jr6u5")
 text = "Start"
 
 [node name="Quit" type="Button" parent="." unique_id=176853481]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 491.0
-offset_right = 627.0
-offset_bottom = 566.0
+offset_left = 527.0
+offset_top = 337.0
+offset_right = 648.0
+offset_bottom = 412.0
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jr6u5")
 text = "Quit"
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_48xlc")]
@@ -133,6 +231,14 @@ text = "Quit"
 position = Vector2(577.5, 326)
 scale = Vector2(0.64739585, 0.60555553)
 sprite_frames = SubResource("SpriteFrames_3533h")
+speed_scale = 4.0
+
+[node name="Start2" type="AnimatedSprite2D" parent="." unique_id=686035977]
+visible = false
+position = Vector2(574, 150.00002)
+scale = Vector2(0.76145834, 0.7675926)
+sprite_frames = SubResource("SpriteFrames_hovqx")
+autoplay = "default"
 speed_scale = 4.0
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

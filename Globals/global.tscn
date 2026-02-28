@@ -7,3 +7,4 @@
 script = ExtResource("1_wqdf5")
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_2n7ea")]
+Games = ["res://Micro Games/micro_1.tscn", "res://Micro Games/micro_tinder.tscn", "res://Micro Games/micro_quick_draw.tscn"]

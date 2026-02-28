@@ -18,10 +18,11 @@ var guarantee : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	micro_swticher.starter.show()
 	heart.visible = false
 	rng.randomize()
 	next_image()
-	pass
+	micro_swticher.starter.play()
 
 
 	
@@ -70,6 +71,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			heart_player.play("heart")
 			music_manager.load_sound("res://Assets/Sounds/SnapShot/let_her_go.mp3")
 			music_manager.start()
+			# end game
 		
 		else: 
 			x.visible = true
@@ -88,6 +90,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_left" or anim_name == "fade_right":
 		next_image()
 		
-		
-	
-		
+
+
+func _on_heart_player_animation_finished(anim_name: StringName) -> void:
+	micro_swticher.play_anim()
