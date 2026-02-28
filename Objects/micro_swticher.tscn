@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cclscjnofjfq2"]
+
+[ext_resource type="Script" uid="uid://dn3f32u7ehx6g" path="res://Scripts/micro_swticher.gd" id="1_smurp"]
+
+[node name="Micro-Swticher" type="Node2D" unique_id=1138590153]
+script = ExtResource("1_smurp")
+Games = ["res://Micro Games/micro_1.tscn", "res://Micro Games/micro_2.tscn"]

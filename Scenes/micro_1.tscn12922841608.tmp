@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dk07w0dbqn6nq"]
+
+[ext_resource type="Texture2D" uid="uid://b487qd32cif3x" path="res://icon.svg" id="1_rdv48"]
+[ext_resource type="Script" uid="uid://dy7gb8id047ap" path="res://Scripts/micro_1.gd" id="1_tyvi3"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="3_7eh2v"]
+
+[node name="Micro1" type="Node2D" unique_id=599587383]
+script = ExtResource("1_tyvi3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=143186363]
+position = Vector2(602, 366)
+texture = ExtResource("1_rdv48")
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("3_7eh2v")]
