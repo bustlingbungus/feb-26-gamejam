@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://but2qpcqayrpu"]
+
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="1_8j6yj"]
+
+[node name="Micro2" type="Node2D" unique_id=88465690]
+
+[node name="Label" type="Label" parent="." unique_id=1205377852]
+offset_left = 472.0
+offset_top = 330.0
+offset_right = 580.0
+offset_bottom = 353.0
+text = "Bruh"
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("1_8j6yj")]
