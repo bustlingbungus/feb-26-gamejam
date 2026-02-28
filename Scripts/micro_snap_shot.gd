@@ -14,6 +14,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	#Sets sound, plays animation, enables hitbox
 	if Input.is_action_just_pressed("ui_accept") && shot == 1:
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/camera_shutter.ogg")
 		sound_manager.audio_player.play()
@@ -29,6 +30,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func caught_result():
+	#mostly sound loading stuff
 	if dog.caught:
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/pgcorrect.ogg")
 		sound_manager.audio_player.play()
