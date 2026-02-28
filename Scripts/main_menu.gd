@@ -1,6 +1,8 @@
 extends Control
 
 @onready var micro_switcher = $"Micro-Swticher"
+@onready var transition: AnimatedSprite2D = $Transition
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,4 +20,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	micro_switcher.switch()
+	transition.play("default")
+
+
+func _on_transition_animation_finished() -> void:
+	micro_switcher.intermission_switch()

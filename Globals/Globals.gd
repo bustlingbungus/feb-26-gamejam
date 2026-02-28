@@ -10,6 +10,10 @@ enum ArrowDir
 	RIGHT
 }
 
+var next_microgame = 0
+var dog_display = 0
+var controls_display = 0
+
 
 var score = 0
 var lives

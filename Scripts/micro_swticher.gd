@@ -2,8 +2,11 @@ extends Node2D
 
 @export var Games = []
 
+@onready var dogshow = "res://Scenes/dog_show.tscn"
+
 var rng = RandomNumberGenerator.new()
 var prev_game
+var intermission = true
 
 
 func _ready() -> void:
@@ -20,5 +23,11 @@ func switch():
 		var x = rng.randi_range(0, Games.size() - 1)
 		# Swithces scenes
 		get_tree().change_scene_to_file(Games[x])
-		prev_game = x
+		Global.next_microgame = x
+		Global.dog_display = x
+		Global.controls_display = x
 		
+
+
+func intermission_switch():
+	get_tree().change_scene_to_file(dogshow)

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://brt7k06l8fqqx"]
 
+[ext_resource type="Script" uid="uid://px6rjnb3n5c" path="res://Scripts/dog_show.gd" id="1_g33d5"]
 [ext_resource type="Texture2D" uid="uid://ty01cw7ytqh2" path="res://Assets/Art/DogShow/BG_Transition.png" id="1_thn2m"]
 [ext_resource type="Texture2D" uid="uid://bl26iqaaire4w" path="res://Assets/Art/DogShow/Flashes/flashes0000.png" id="2_vd3k6"]
 [ext_resource type="Texture2D" uid="uid://dqwc5y3o2pln6" path="res://Assets/Art/DogShow/Flashes/flashes0001.png" id="3_nmaij"]
@@ -13,20 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://camp7t4xbqdmo" path="res://Assets/Art/DogShow/Fire/Fire0004.png" id="11_0g3qd"]
 [ext_resource type="Texture2D" uid="uid://b6uwru6glokmy" path="res://Assets/Art/DogShow/Fire/Fire0005.png" id="12_i8166"]
 [ext_resource type="Texture2D" uid="uid://b8x0qcx10vyyo" path="res://Assets/Art/DogShow/Fire/Fire0006.png" id="13_rmgki"]
-[ext_resource type="Texture2D" uid="uid://cpt6kp1u6u6ik" path="res://Assets/Art/DogShow/Curtains 2/Curtain0000.png" id="14_exbgy"]
-[ext_resource type="Texture2D" uid="uid://6j7o7y6hsvg6" path="res://Assets/Art/DogShow/Curtains 2/Curtain0001.png" id="15_pkh00"]
-[ext_resource type="Texture2D" uid="uid://c3b5ljgaodttp" path="res://Assets/Art/DogShow/Curtains 2/Curtain0002.png" id="16_avxg7"]
-[ext_resource type="Texture2D" uid="uid://dev1adxf303y0" path="res://Assets/Art/DogShow/Curtains 2/Curtain0003.png" id="17_kmty7"]
-[ext_resource type="Texture2D" uid="uid://bfn7r1x5todup" path="res://Assets/Art/DogShow/Curtains 2/Curtain0004.png" id="18_qfgtg"]
-[ext_resource type="Texture2D" uid="uid://b3c2hrdp3k4qr" path="res://Assets/Art/DogShow/Curtains 2/Curtain0005.png" id="19_f2pcf"]
-[ext_resource type="Texture2D" uid="uid://tdb7e1wkgwqo" path="res://Assets/Art/DogShow/Curtains 2/Curtain0006.png" id="20_t2t7k"]
-[ext_resource type="Texture2D" uid="uid://r2n6cqsjf70i" path="res://Assets/Art/DogShow/Curtains 2/Curtain0007.png" id="21_23vds"]
-[ext_resource type="Texture2D" uid="uid://cj4ncloba8aod" path="res://Assets/Art/DogShow/Curtains 2/Curtain0008.png" id="22_b7wpr"]
-[ext_resource type="Texture2D" uid="uid://danukdmjk07vk" path="res://Assets/Art/DogShow/Curtains 2/Curtain0009.png" id="23_fftg0"]
-[ext_resource type="Texture2D" uid="uid://btab2bkksoskt" path="res://Assets/Art/DogShow/Curtains 2/Curtain0010.png" id="24_n1i74"]
-[ext_resource type="Texture2D" uid="uid://bvfwlkubyl2bc" path="res://Assets/Art/DogShow/Curtains 2/Curtain0011.png" id="25_yifpy"]
-[ext_resource type="Texture2D" uid="uid://beni2k2bvb136" path="res://Assets/Art/DogShow/Curtains 2/Curtain0012.png" id="26_exrle"]
-[ext_resource type="Texture2D" uid="uid://bxid6guktd2vw" path="res://Assets/Art/DogShow/Curtains 2/Curtain0013.png" id="27_pn3e4"]
 [ext_resource type="Texture2D" uid="uid://5ixjk245rxpf" path="res://Assets/Art/DogShow/Curtains 2/Curtain0014.png" id="28_laf3l"]
 [ext_resource type="Texture2D" uid="uid://djq8onf8ni23j" path="res://Assets/Art/DogShow/Curtains 2/Curtain0015.png" id="29_o6iyu"]
 [ext_resource type="Texture2D" uid="uid://crxsd5tlbirr0" path="res://Assets/Art/DogShow/Curtains 2/Curtain0016.png" id="30_buevw"]
@@ -46,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dc1213rt58s8g" path="res://Assets/Art/DogShow/Curtains 2/Curtain0030.png" id="44_7cbxu"]
 [ext_resource type="Texture2D" uid="uid://c4tbjxkl0faos" path="res://Assets/Art/DogShow/Curtains 2/Curtain0031.png" id="45_61y5y"]
 [ext_resource type="Texture2D" uid="uid://c7srbyec6jivy" path="res://Assets/Art/DogShow/Curtains 2/Curtain0032.png" id="46_l8365"]
+[ext_resource type="Texture2D" uid="uid://c7fw4jrtdsvx2" path="res://Assets/Art/Dog Elite Concept Art.png" id="47_pkh00"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vd3k6"]
 animations = [{
@@ -103,48 +91,6 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_exbgy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_pkh00")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_avxg7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_kmty7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_qfgtg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_f2pcf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_t2t7k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_23vds")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_b7wpr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_fftg0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_n1i74")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_yifpy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_exrle")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_pn3e4")
-}, {
-"duration": 1.0,
 "texture": ExtResource("28_laf3l")
 }, {
 "duration": 1.0,
@@ -201,12 +147,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("46_l8365")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
 [node name="DogShow" type="Node2D" unique_id=660536771]
+script = ExtResource("1_g33d5")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=334696913]
 position = Vector2(575.00006, 321.5)
@@ -220,6 +167,58 @@ sprite_frames = SubResource("SpriteFrames_vd3k6")
 autoplay = "default"
 speed_scale = 0.2
 
+[node name="InfoDisplay" type="ColorRect" parent="." unique_id=2111558098]
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 800.0
+offset_bottom = 442.0
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Controls" type="Label" parent="InfoDisplay" unique_id=86531800]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -30.0
+offset_right = 384.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 32
+text = "Controls:
+-----------------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="InfoDisplay" unique_id=395905050]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 99.0
+offset_right = 384.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 32
+text = "
+- Space Bar -
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Dash" type="Label" parent="InfoDisplay" unique_id=1258410943]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 384.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 32
+text = "
+-----------------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InfoDisplay" unique_id=761214238]
+position = Vector2(199, 452)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("47_pkh00")
+
 [node name="Fire" type="AnimatedSprite2D" parent="." unique_id=216570375]
 position = Vector2(574.5, 323.50003)
 scale = Vector2(0.60260415, 0.6009259)
@@ -228,6 +227,7 @@ autoplay = "default"
 speed_scale = 3.0
 
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
+visible = false
 position = Vector2(577.5, 320.00003)
 scale = Vector2(0.6411459, 0.61759263)
 sprite_frames = SubResource("SpriteFrames_fh3ea")

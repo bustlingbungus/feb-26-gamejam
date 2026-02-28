@@ -2,6 +2,94 @@
 
 [ext_resource type="Script" uid="uid://8mrvairp20t2" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cpt6kp1u6u6ik" path="res://Assets/Art/DogShow/Curtains 2/Curtain0000.png" id="3_6dk6o"]
+[ext_resource type="Texture2D" uid="uid://6j7o7y6hsvg6" path="res://Assets/Art/DogShow/Curtains 2/Curtain0001.png" id="4_jr6u5"]
+[ext_resource type="Texture2D" uid="uid://c3b5ljgaodttp" path="res://Assets/Art/DogShow/Curtains 2/Curtain0002.png" id="5_6m47u"]
+[ext_resource type="Texture2D" uid="uid://dev1adxf303y0" path="res://Assets/Art/DogShow/Curtains 2/Curtain0003.png" id="6_84iac"]
+[ext_resource type="Texture2D" uid="uid://bfn7r1x5todup" path="res://Assets/Art/DogShow/Curtains 2/Curtain0004.png" id="7_5n0dv"]
+[ext_resource type="Texture2D" uid="uid://b3c2hrdp3k4qr" path="res://Assets/Art/DogShow/Curtains 2/Curtain0005.png" id="8_ne6ao"]
+[ext_resource type="Texture2D" uid="uid://tdb7e1wkgwqo" path="res://Assets/Art/DogShow/Curtains 2/Curtain0006.png" id="9_tt8ml"]
+[ext_resource type="Texture2D" uid="uid://r2n6cqsjf70i" path="res://Assets/Art/DogShow/Curtains 2/Curtain0007.png" id="10_fmarx"]
+[ext_resource type="Texture2D" uid="uid://cj4ncloba8aod" path="res://Assets/Art/DogShow/Curtains 2/Curtain0008.png" id="11_hkdq0"]
+[ext_resource type="Texture2D" uid="uid://danukdmjk07vk" path="res://Assets/Art/DogShow/Curtains 2/Curtain0009.png" id="12_xcoo4"]
+[ext_resource type="Texture2D" uid="uid://btab2bkksoskt" path="res://Assets/Art/DogShow/Curtains 2/Curtain0010.png" id="13_jw7lb"]
+[ext_resource type="Texture2D" uid="uid://bvfwlkubyl2bc" path="res://Assets/Art/DogShow/Curtains 2/Curtain0011.png" id="14_6vfk8"]
+[ext_resource type="Texture2D" uid="uid://beni2k2bvb136" path="res://Assets/Art/DogShow/Curtains 2/Curtain0012.png" id="15_1xund"]
+[ext_resource type="Texture2D" uid="uid://bxid6guktd2vw" path="res://Assets/Art/DogShow/Curtains 2/Curtain0013.png" id="16_msuys"]
+[ext_resource type="Texture2D" uid="uid://5ixjk245rxpf" path="res://Assets/Art/DogShow/Curtains 2/Curtain0014.png" id="17_aylim"]
+[ext_resource type="Texture2D" uid="uid://djq8onf8ni23j" path="res://Assets/Art/DogShow/Curtains 2/Curtain0015.png" id="18_y82t1"]
+[ext_resource type="Texture2D" uid="uid://crxsd5tlbirr0" path="res://Assets/Art/DogShow/Curtains 2/Curtain0016.png" id="19_bmhhk"]
+[ext_resource type="Texture2D" uid="uid://bmscr5rpe5lja" path="res://Assets/Art/DogShow/Curtains 2/Curtain0017.png" id="20_pddej"]
+[ext_resource type="Texture2D" uid="uid://df0cck1bm8k5n" path="res://Assets/Art/DogShow/Curtains 2/Curtain0018.png" id="21_ko05x"]
+[ext_resource type="Texture2D" uid="uid://c7vahxb6tt6jc" path="res://Assets/Art/DogShow/Curtains 2/Curtain0019.png" id="22_43km2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3533h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6dk6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jr6u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6m47u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_84iac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5n0dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ne6ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tt8ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fmarx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hkdq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xcoo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jw7lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6vfk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1xund")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_msuys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_aylim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_y82t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bmhhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pddej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ko05x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_43km2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main_Menu" type="Control" unique_id=1449844415]
 layout_mode = 3
@@ -41,5 +129,12 @@ text = "Quit"
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_48xlc")]
 
+[node name="Transition" type="AnimatedSprite2D" parent="." unique_id=254542356]
+position = Vector2(577.5, 326)
+scale = Vector2(0.64739585, 0.60555553)
+sprite_frames = SubResource("SpriteFrames_3533h")
+speed_scale = 4.0
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
