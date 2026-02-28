@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bcrljqnflie56"]
+
+[ext_resource type="Script" uid="uid://1i0g6p51iqmt" path="res://Micro Games/micro_tinder.gd" id="1_2ibkr"]
+[ext_resource type="Texture2D" uid="uid://cr77xwigd3rie" path="res://Assets/Art/Tinder/phone_01.png" id="2_xisd0"]
+[ext_resource type="Texture2D" uid="uid://crflolf52e4og" path="res://Assets/Art/Tinder/dog_02.png" id="3_xisd0"]
+
+[sub_resource type="Animation" id="Animation_2ibkr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Image:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 270)]
+}
+
+[sub_resource type="Animation" id="Animation_qcgpp"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.1333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.20784314), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xisd0"]
+resource_name = "fade_left"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Image:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(574, 270), Vector2(-150, 270)]
+}
+
+[sub_resource type="Animation" id="Animation_yqxnw"]
+resource_name = "fade_right"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Image:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.2333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(574, 270), Vector2(1340, 270)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqxnw"]
+_data = {
+&"RESET": SubResource("Animation_2ibkr"),
+&"fade_in": SubResource("Animation_qcgpp"),
+&"fade_left": SubResource("Animation_xisd0"),
+&"fade_right": SubResource("Animation_yqxnw")
+}
+
+[node name="MicroTinder" type="Node2D" unique_id=1567121988]
+script = ExtResource("1_2ibkr")
+images = ["res://Assets/Art/Tinder/mailman_01.png", "res://Assets/Art/Tinder/dog_01.png", "res://Assets/Art/Tinder/dog_02.png", "res://Assets/Art/Tinder/dog_03.png"]
+
+[node name="Phone" type="Sprite2D" parent="." unique_id=1312999058]
+position = Vector2(571, 310)
+texture = ExtResource("2_xisd0")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=308512558]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(574, 270)
+texture = ExtResource("3_xisd0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1297541614]
+libraries/ = SubResource("AnimationLibrary_yqxnw")
