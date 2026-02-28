@@ -30,4 +30,8 @@ func switch():
 
 
 func intermission_switch():
+	rng.randomize()
+	var x = rng.randi_range(0, Games.size() - 1)
+	# Swithces scenes
+	Global.next_microgame = x
 	get_tree().change_scene_to_file(dogshow)

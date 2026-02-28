@@ -227,7 +227,6 @@ autoplay = "default"
 speed_scale = 3.0
 
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
-visible = false
 position = Vector2(577.5, 320.00003)
 scale = Vector2(0.6411459, 0.61759263)
 sprite_frames = SubResource("SpriteFrames_fh3ea")
