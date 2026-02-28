@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c2k5iysagjrrl"]
+
+[ext_resource type="Script" uid="uid://u5mdqa3vkqrv" path="res://Scripts/micro_quick_draw.gd" id="1_1rblv"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_04cm2"]
+[ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="3_bner8"]
+
+[sub_resource type="Animation" id="Animation_04cm2"]
+resource_name = "Flash"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.010000002, 0.049999997, 0.099999994, 0.15, 0.19999999, 0.25, 0.3, 0.35000002, 0.4, 0.45000002, 0.5, 0.55, 0.6, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bner8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gxgo"]
+_data = {
+&"Flash": SubResource("Animation_04cm2"),
+&"RESET": SubResource("Animation_bner8")
+}
+
+[node name="micro_quick_draw" type="Node2D" unique_id=177560595]
+script = ExtResource("1_1rblv")
+
+[node name="DRAW" type="Label" parent="." unique_id=6616050]
+modulate = Color(1, 1, 1, 0)
+offset_left = 420.0
+offset_top = 298.0
+offset_right = 685.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 64
+text = "- DRAW -"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DRAW" unique_id=1036123175]
+libraries/ = SubResource("AnimationLibrary_5gxgo")
+
+[node name="SoundManager" parent="." unique_id=767795503 instance=ExtResource("3_bner8")]
+
+[node name="MusicManager" parent="." unique_id=1865837435 instance=ExtResource("3_bner8")]
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_04cm2")]
+
+[node name="Duel_Starter" type="Timer" parent="." unique_id=594569465]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="Duel_Decider" type="Timer" parent="." unique_id=1445263975]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Duel_Starter" to="." method="_on_duel_timeout"]
+[connection signal="timeout" from="Duel_Decider" to="." method="_on_duel_decider_timeout"]

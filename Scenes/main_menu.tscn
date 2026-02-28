@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d083wxi434rgx"]
+
+[ext_resource type="Script" uid="uid://8mrvairp20t2" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_48xlc"]
+
+[node name="Main_Menu" type="Control" unique_id=1449844415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Title" type="Label" parent="." unique_id=569045865]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 25.0
+offset_right = 931.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 80
+text = "Dog The Dog Doin ?"
+
+[node name="Start" type="Button" parent="." unique_id=1962408262]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 394.0
+offset_right = 594.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="Quit" type="Button" parent="." unique_id=176853481]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 491.0
+offset_right = 627.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_48xlc")]
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
