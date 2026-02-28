@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cylavxm8n8pyu"]
+
+[ext_resource type="Texture2D" uid="uid://cb2i22n25fiyd" path="res://Assets/Art/FridayNightFunkin/fnfarrow.png" id="1_1apck"]
+[ext_resource type="Script" uid="uid://bdbwf1ffplul7" path="res://Scripts/FridayNightFunkin/fnf_arrow.gd" id="1_mrp1m"]
+
+[node name="FnfArrow" type="Node2D" unique_id=1714084423]
+script = ExtResource("1_mrp1m")
+
+[node name="UpArrow" type="Sprite2D" parent="." unique_id=1481892915]
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("1_1apck")
