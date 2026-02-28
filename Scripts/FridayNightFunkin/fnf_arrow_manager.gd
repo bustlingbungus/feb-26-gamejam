@@ -52,10 +52,8 @@ func AddArrow(dir : Glob.ArrowDir):
 
 func SwitchSides() -> void:
 	if activePlayer == fnfgirl:
-		print("boy turn")
 		activePlayer = fnfboy
 	else:
-		print("girl turn")
 		activePlayer = fnfgirl
 		req_directions.clear()
 		turn_scale += TurnScaling / 10.0
@@ -80,7 +78,6 @@ func SpawnArrows() -> void:
 		cnt = randi_range(int(ArrowCountRange.x * cnt_scale), int(ArrowCountRange.y * cnt_scale))
 	else:	
 		cnt = req_directions.size()
-	print(cnt)
 	ArrowSpawner.SpawnArrows(activePlayer.position, cnt, SpawnSpeed / spawn_scale, ArrowSpeed * speed_scale)
 
 
