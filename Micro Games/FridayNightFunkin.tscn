@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b0wfpe8b822hb"]
+
+[ext_resource type="Texture2D" uid="uid://mq16jqab3kf6" path="res://Assets/Art/FridayNightFunkin/fnfgirl.png" id="1_on4ia"]
+[ext_resource type="Script" uid="uid://c7u0igllbt4nk" path="res://Scripts/FridayNightFunkin/fnf_arrow_spawner.gd" id="2_dj1b5"]
+[ext_resource type="PackedScene" uid="uid://cylavxm8n8pyu" path="res://Objects/fnf_arrow.tscn" id="3_dj1b5"]
+[ext_resource type="Script" uid="uid://wowlqa224b6q" path="res://Scripts/FridayNightFunkin/fnf_arrow_manager.gd" id="4_t7bki"]
+[ext_resource type="Texture2D" uid="uid://dawg5ulh15jeb" path="res://Assets/Art/FridayNightFunkin/fnfboy.png" id="5_c8ym5"]
+
+[node name="FridayNightFunkin" type="Node2D" unique_id=1417410151]
+
+[node name="ArrowSpawner" type="Node" parent="." unique_id=1285187881]
+script = ExtResource("2_dj1b5")
+arrow_scene = ExtResource("3_dj1b5")
+
+[node name="ArrowManager" type="Node" parent="." unique_id=938459044 node_paths=PackedStringArray("ArrowSpawner", "fnfgirl", "fnfboy")]
+script = ExtResource("4_t7bki")
+ArrowSpawner = NodePath("../ArrowSpawner")
+ArrowSpeed = 300.0
+fnfgirl = NodePath("../fnfgirl")
+fnfboy = NodePath("../fnfboy")
+
+[node name="fnfboy" type="Node2D" parent="." unique_id=1871352549]
+position = Vector2(200, 500)
+
+[node name="Sprite2D" type="Sprite2D" parent="fnfboy" unique_id=1260958070]
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("5_c8ym5")
+
+[node name="fnfgirl" type="Node2D" parent="." unique_id=1184917305]
+position = Vector2(980, 500)
+scale = Vector2(0.625, 0.625)
+
+[node name="Sprite2D" type="Sprite2D" parent="fnfgirl" unique_id=1014233167]
+texture = ExtResource("1_on4ia")
