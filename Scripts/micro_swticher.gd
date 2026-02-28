@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 func switch():
 		rng.randomize()
 		var x = rng.randi_range(0, Games.size() - 1)
+		# Swithces scenes
 		get_tree().change_scene_to_file(Games[x])
 		prev_game = x
 		
