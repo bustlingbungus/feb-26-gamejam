@@ -1,0 +1,255 @@
+[gd_scene format=3 uid="uid://chxvmb8g2j06h"]
+
+[ext_resource type="Script" uid="uid://clhgaomdn81kd" path="res://Scripts/micro_snap_shot.gd" id="1_d1i5y"]
+[ext_resource type="Texture2D" uid="uid://biir23e8dkdbq" path="res://Assets/Art/SnapShot/BG.png" id="2_emrj1"]
+[ext_resource type="Script" uid="uid://doap5pttpm6al" path="res://Scripts/dog.gd" id="2_xpdp8"]
+[ext_resource type="Texture2D" uid="uid://c7fw4jrtdsvx2" path="res://Assets/Art/Dog Elite Concept Art.png" id="3_xpdp8"]
+[ext_resource type="Texture2D" uid="uid://bhj6f6102yut" path="res://Assets/Art/SnapShot/Camera Lens.png" id="4_scad2"]
+[ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="4_w1cbn"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="7_epit8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v62fm"]
+size = Vector2(129, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v62fm"]
+radius = 210.2879
+
+[sub_resource type="Animation" id="Animation_scad2"]
+resource_name = "Camera_Flash"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1174, 40), Vector2(1174, 344), Vector2(1174, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1174, 40), Vector2(1174, 308), Vector2(1174, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-12, 608), Vector2(-12, 340), Vector2(-12, 608)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TopRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_emrj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottomRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1174, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1174, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 340)]
+}
+
+[sub_resource type="Animation" id="Animation_epit8"]
+resource_name = "defualt"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1174, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomRect:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1174, 40)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 608)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epit8"]
+_data = {
+&"Camera_Flash": SubResource("Animation_scad2"),
+&"RESET": SubResource("Animation_emrj1"),
+&"defualt": SubResource("Animation_epit8")
+}
+
+[node name="Micro_SnapShot" type="Node2D" unique_id=964757505]
+script = ExtResource("1_d1i5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395297044]
+position = Vector2(574, 354)
+scale = Vector2(1.0364584, 1.1033951)
+texture = ExtResource("2_emrj1")
+
+[node name="Dog" type="CharacterBody2D" parent="." unique_id=2121419681]
+position = Vector2(1307, 377)
+script = ExtResource("2_xpdp8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Dog" unique_id=2112773550]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_xpdp8")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Dog" unique_id=78310088]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/Area2D" unique_id=1469154332]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_v62fm")
+
+[node name="Timer" type="Timer" parent="." unique_id=128457059]
+wait_time = 5.0
+autostart = true
+
+[node name="Camera" type="Node2D" parent="." unique_id=1458347308]
+position = Vector2(556, 344)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera" unique_id=1167760868]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_scad2")
+
+[node name="Area2D" type="Area2D" parent="Camera" unique_id=1820549191]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Area2D" unique_id=1323508880]
+shape = SubResource("CircleShape2D_v62fm")
+disabled = true
+
+[node name="SoundManager" parent="." unique_id=767795503 instance=ExtResource("4_w1cbn")]
+
+[node name="MusicManager" parent="." unique_id=376942147 instance=ExtResource("4_w1cbn")]
+
+[node name="CameraFlash" type="Control" parent="." unique_id=1570274298]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 647.0
+
+[node name="TopRect" type="ColorRect" parent="CameraFlash" unique_id=842906355]
+layout_mode = 0
+offset_left = -12.0
+offset_right = 1162.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="BottomRect" type="ColorRect" parent="CameraFlash" unique_id=238000176]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 340.0
+offset_right = 1162.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraFlash" unique_id=277610118]
+libraries/ = SubResource("AnimationLibrary_epit8")
+autoplay = &"defualt"
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("7_epit8")]
+
+[connection signal="timeout" from="Timer" to="Dog" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Camera/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="CameraFlash/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

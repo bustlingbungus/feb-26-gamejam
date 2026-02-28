@@ -4,4 +4,4 @@
 
 [node name="Micro-Swticher" type="Node2D" unique_id=1138590153]
 script = ExtResource("1_smurp")
-Games = ["res://Micro Games/micro_1.tscn", "res://Micro Games/micro_2.tscn"]
+Games = ["res://Micro Games/micro_1.tscn", "res://Micro Games/micro_2.tscn", "res://Micro Games/micro_snap_shot.tscn"]
