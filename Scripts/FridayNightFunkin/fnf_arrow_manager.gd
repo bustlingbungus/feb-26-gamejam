@@ -22,6 +22,7 @@ var cnt_scale : float = 1
 var turn_scale : float = 1
 
 var req_directions : Array
+var player_arrows : Array
 
 var turn_time : float
 var turn_switch_timer : float = 0.0
@@ -31,6 +32,7 @@ var turn_switch_timer : float = 0.0
 func _ready() -> void:
 	turn_time = TimeBetweenTurns
 	req_directions = Array()
+	player_arrows = Array()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,13 +46,12 @@ func _process(delta: float) -> void:
 			else:			
 				SwitchSides()
 				SpawnArrows()
-
-
-func AddArrow(dir : Glob.ArrowDir):
-	req_directions.append(dir)
+				
+	HandleTopArrow()
 
 
 func SwitchSides() -> void:
+	player_arrows.clear()
 	if activePlayer == fnfgirl:
 		activePlayer = fnfboy
 	else:
@@ -89,3 +90,37 @@ func GetNextDirection() -> Glob.ArrowDir:
 	
 func AddDirection(dir : Glob.ArrowDir) -> void:
 	req_directions.push_back(dir)
+	
+func AddArrow(arrow : Node2D) -> void:
+	player_arrows.push_back(arrow)
+	
+func HandleTopArrow() -> void:
+	if player_arrows.size() == 0:
+		return
+	if activePlayer == fnfboy:
+		HandlePlayerInput()
+	else:
+		HandleGirlArrow()
+			
+func HandlePlayerInput() -> void:
+	var top_arrow = player_arrows[0]
+	if top_arrow.ArrowComplete():
+		print("correct!")
+		top_arrow.Destroy()
+		player_arrows.pop_front()
+	elif DirectionalInput():
+		print("missed")
+		player_arrows.pop_front()
+	elif top_arrow.PassedTarget():
+		print("missed")
+		player_arrows.pop_front()
+		
+		
+func HandleGirlArrow() -> void:
+	var top_arrow = player_arrows[0]
+	if top_arrow.PassedTarget():
+		fnfgirl.ReactToArrow(top_arrow)
+		player_arrows.pop_front()
+		
+func DirectionalInput() -> bool:
+	return Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_left") || Input.is_action_just_pressed("ui_right")

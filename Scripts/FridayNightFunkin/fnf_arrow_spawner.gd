@@ -48,8 +48,10 @@ func SpawnArrow(target : Vector2, arrowSpeed : float) -> void:
 		
 	var spawnPos = Vector2(target.x, -100.0)
 	var dir = GetArrowDirection()
-		
+	
 	var arrow = arrow_scene.instantiate()
+	arrowManager.AddArrow(arrow)
+	
 	arrow.Init(spawnPos, target, dir, arrow_speed)
 	add_child(arrow)
 

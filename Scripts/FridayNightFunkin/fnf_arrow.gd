@@ -4,6 +4,7 @@ extends Node2D
 var targetPos : Vector2 = Vector2.ZERO
 var vel : Vector2 = Vector2.ZERO
 var satisfyAction : String = "None"
+var direction : Glob.ArrowDir
 
 # amount of time (in seconds) the arrow will take to reach it's target 
 var speed : float
@@ -24,6 +25,7 @@ func Init(pos : Vector2, target : Vector2, dir : Glob.ArrowDir, moveSpeed : floa
 	targetPos = target;
 	speed = moveSpeed
 	vel = (target - pos).normalized() * speed;
+	direction = dir
 	
 	match dir:
 		Glob.ArrowDir.UP:
@@ -47,5 +49,8 @@ func ArrowComplete() -> bool:
 func PassedTarget() -> bool:
 	var dir = targetPos - position
 	if (dir.dot(vel) <= 0):
-		return false
-	return true
+		return true
+	return false
+	
+func Destroy() -> void:
+	queue_free()
