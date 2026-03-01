@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d2h480c4crevb"]
+
+[ext_resource type="Script" uid="uid://bs37fjk844ayr" path="res://Globals/score.gd" id="1_kt03g"]
+[ext_resource type="Texture2D" uid="uid://cr21ncnbbuqsy" path="res://Assets/Art/DogShow/Collar_LivesIndicator.png" id="2_uklei"]
+
+[node name="UI" type="Control" unique_id=1078211157]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 651.0
+script = ExtResource("1_kt03g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1934262005]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 90.0
+color = Color(0.15294118, 0.15294118, 0.15294118, 0.59607846)
+
+[node name="Score" type="Label" parent="." unique_id=1565937512]
+modulate = Color(1, 1, 1, 0.6117647)
+layout_mode = 0
+offset_left = 1044.0
+offset_right = 1153.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lives" type="Control" parent="." unique_id=1806691301]
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 76.0
+
+[node name="ColorRect2" type="ColorRect" parent="Lives" unique_id=1302530976]
+visible = false
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 336.0
+offset_bottom = 90.0
+color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[node name="1" type="Sprite2D" parent="Lives" unique_id=1871490742]
+position = Vector2(52, 37)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_uklei")
+
+[node name="2" type="Sprite2D" parent="Lives" unique_id=681045793]
+position = Vector2(162, 37)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_uklei")
+
+[node name="3" type="Sprite2D" parent="Lives" unique_id=2060174119]
+position = Vector2(266, 37)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_uklei")

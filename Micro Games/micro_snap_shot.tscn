@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bhj6f6102yut" path="res://Assets/Art/SnapShot/Camera Lens.png" id="4_scad2"]
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="4_w1cbn"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="7_epit8"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="8_vudr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v62fm"]
-size = Vector2(129, 128)
+size = Vector2(121, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v62fm"]
 radius = 210.2879
@@ -188,7 +189,6 @@ texture = ExtResource("2_emrj1")
 [node name="Dog" type="CharacterBody2D" parent="." unique_id=2121419681]
 position = Vector2(1307, 377)
 script = ExtResource("2_xpdp8")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Dog" unique_id=2112773550]
 scale = Vector2(0.3, 0.3)
@@ -198,12 +198,15 @@ flip_h = true
 [node name="Area2D" type="Area2D" parent="Dog" unique_id=78310088]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/Area2D" unique_id=1469154332]
-position = Vector2(-0.5, 0)
+position = Vector2(10, -6)
 shape = SubResource("RectangleShape2D_v62fm")
+
+[node name="Activator" type="Timer" parent="." unique_id=1659588209]
+one_shot = true
+autostart = true
 
 [node name="Timer" type="Timer" parent="." unique_id=128457059]
 wait_time = 5.0
-autostart = true
 
 [node name="Camera" type="Node2D" parent="." unique_id=1458347308]
 position = Vector2(556, 344)
@@ -248,8 +251,11 @@ color = Color(0, 0, 0, 1)
 libraries/ = SubResource("AnimationLibrary_epit8")
 autoplay = &"defualt"
 
+[node name="Score" parent="." unique_id=1078211157 instance=ExtResource("8_vudr0")]
+
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("7_epit8")]
 
+[connection signal="timeout" from="Activator" to="." method="_on_activator_timeout"]
 [connection signal="timeout" from="Timer" to="Dog" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Camera/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="CameraFlash/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

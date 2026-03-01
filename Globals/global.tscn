@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cwnf35x2jy436"]
 
 [ext_resource type="Script" uid="uid://6rcqcqtbdno3" path="res://Globals/Globals.gd" id="1_wqdf5"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_2n7ea"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="3_c6r48"]
 
 [node name="Global" type="Node" unique_id=545380386]
 script = ExtResource("1_wqdf5")
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_2n7ea")]
+Games = ["res://Micro Games/micro_1.tscn", "res://Micro Games/micro_tinder.tscn", "res://Micro Games/micro_quick_draw.tscn"]
+
+[node name="Score" parent="." unique_id=1078211157 instance=ExtResource("3_c6r48")]

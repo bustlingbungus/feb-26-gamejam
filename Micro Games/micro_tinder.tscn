@@ -3,6 +3,24 @@
 [ext_resource type="Script" uid="uid://1i0g6p51iqmt" path="res://Micro Games/micro_tinder.gd" id="1_2ibkr"]
 [ext_resource type="Texture2D" uid="uid://cr77xwigd3rie" path="res://Assets/Art/Tinder/phone_01.png" id="2_xisd0"]
 [ext_resource type="Texture2D" uid="uid://crflolf52e4og" path="res://Assets/Art/Tinder/dog_02.png" id="3_xisd0"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="4_yqxnw"]
+[ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="5_k1ybd"]
+[ext_resource type="Texture2D" uid="uid://b4mkyyoepo7yy" path="res://Assets/Art/Tinder/heart_01.png" id="6_k1ybd"]
+[ext_resource type="Texture2D" uid="uid://l81ojs0smq6n" path="res://Assets/Art/Tinder/x_01.png" id="7_ffuhc"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="8_g4wqe"]
+
+[sub_resource type="Gradient" id="Gradient_xisd0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qcgpp"]
+gradient = SubResource("Gradient_xisd0")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_qcgpp"]
+colors = PackedColorArray(0.8661112, 0.8661114, 0.8661111, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yqxnw"]
+gradient = SubResource("Gradient_qcgpp")
+fill_from = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_2ibkr"]
 length = 0.001
@@ -30,10 +48,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(574, 270)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Heart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.17873299, 0.20524693)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("X:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qcgpp"]
 resource_name = "fade_in"
-length = 2.5
+length = 0.56666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -41,15 +83,27 @@ tracks/0/path = NodePath("Image:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 2.1333334),
+"times": PackedFloat32Array(0.1, 0.43333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.20784314), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Image:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(574, -61.905), Vector2(574, 270)]
+}
 
 [sub_resource type="Animation" id="Animation_xisd0"]
 resource_name = "fade_left"
-length = 2.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,7 +111,7 @@ tracks/0/path = NodePath("Image:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.3666666),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -69,15 +123,15 @@ tracks/1/path = NodePath("Image:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 1.2),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(574, 270), Vector2(-150, 270)]
+"values": [Vector2(574, 270), Vector2(-130, 270)]
 }
 
 [sub_resource type="Animation" id="Animation_yqxnw"]
 resource_name = "fade_right"
-length = 2.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -85,7 +139,7 @@ tracks/0/path = NodePath("Image:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.3666666),
+"times": PackedFloat32Array(0, 0.46666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -97,10 +151,42 @@ tracks/1/path = NodePath("Image:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 1.2333333),
+"times": PackedFloat32Array(0, 0.43333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(574, 270), Vector2(1340, 270)]
+"values": [Vector2(574, 270), Vector2(1300, 270)]
+}
+
+[sub_resource type="Animation" id="Animation_k1ybd"]
+resource_name = "heart"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.17873299, 0.20524693), Vector2(13.964, 15.995)]
+}
+
+[sub_resource type="Animation" id="Animation_g4wqe"]
+resource_name = "x"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("X:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yqxnw"]
@@ -108,21 +194,72 @@ _data = {
 &"RESET": SubResource("Animation_2ibkr"),
 &"fade_in": SubResource("Animation_qcgpp"),
 &"fade_left": SubResource("Animation_xisd0"),
-&"fade_right": SubResource("Animation_yqxnw")
+&"fade_right": SubResource("Animation_yqxnw"),
+&"heart": SubResource("Animation_k1ybd"),
+&"x": SubResource("Animation_g4wqe")
 }
 
 [node name="MicroTinder" type="Node2D" unique_id=1567121988]
 script = ExtResource("1_2ibkr")
 images = ["res://Assets/Art/Tinder/mailman_01.png", "res://Assets/Art/Tinder/dog_01.png", "res://Assets/Art/Tinder/dog_02.png", "res://Assets/Art/Tinder/dog_03.png"]
 
-[node name="Phone" type="Sprite2D" parent="." unique_id=1312999058]
-position = Vector2(571, 310)
-texture = ExtResource("2_xisd0")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=11090229]
+modulate = Color(1, 0.36078432, 0.5058824, 1)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(19.38949, 11.013965)
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_qcgpp")
 
 [node name="Image" type="Sprite2D" parent="." unique_id=308512558]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(574, 270)
 texture = ExtResource("3_xisd0")
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=997525805]
+modulate = Color(1, 0.36078432, 0.5058824, 1)
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(19.331106, 1.3999999)
+texture = SubResource("GradientTexture2D_yqxnw")
+
+[node name="Phone" type="Sprite2D" parent="." unique_id=1312999058]
+position = Vector2(571, 310)
+texture = ExtResource("2_xisd0")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1297541614]
 libraries/ = SubResource("AnimationLibrary_yqxnw")
+
+[node name="HeartPlayer" type="AnimationPlayer" parent="." unique_id=335028777]
+libraries/ = SubResource("AnimationLibrary_yqxnw")
+
+[node name="Heart" type="Sprite2D" parent="." unique_id=175010904]
+position = Vector2(578, 273.00003)
+scale = Vector2(0.17873299, 0.20524693)
+texture = ExtResource("6_k1ybd")
+
+[node name="X" type="Sprite2D" parent="." unique_id=1292162159]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(604, 310)
+rotation = -0.015936974
+scale = Vector2(0.33849844, 0.38348776)
+texture = ExtResource("7_ffuhc")
+
+[node name="SoundManager" parent="." unique_id=767795503 instance=ExtResource("5_k1ybd")]
+
+[node name="MusicManager" parent="." unique_id=604709452 instance=ExtResource("5_k1ybd")]
+
+[node name="Score" parent="." unique_id=1078211157 instance=ExtResource("8_g4wqe")]
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("4_yqxnw")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="HeartPlayer" to="." method="_on_heart_player_animation_finished"]
