@@ -134,10 +134,3 @@ stream = ExtResource("14_m3avg")
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("1_cjxoe")]
 position = Vector2(6, 0)
-
-[node name="Label" type="Label" parent="." unique_id=1648890188]
-offset_left = 9.0
-offset_top = 616.0
-offset_right = 612.0
-offset_bottom = 644.0
-text = "Song - CLUB SANDWICH (Joey Valence & Brae)"

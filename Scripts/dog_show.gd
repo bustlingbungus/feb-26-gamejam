@@ -55,3 +55,9 @@ func micro_selection_assosiation():
 			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
 			label2.text = "Attracted to the US postal service."
+		5: # fnf
+			controls.text = "Simon Says"
+			label.text = "- WASD / Arrow keys -"
+			sprite_2d.texture = load("res://Assets/Art/FridayNightFunkin/oiiai_idle.png")
+			sprite_2d.scale = Vector2(1.0, 1.0)
+			label2.text = "Do what hte dog doin'"
