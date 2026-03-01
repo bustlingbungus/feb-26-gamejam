@@ -1,14 +1,29 @@
 [gd_scene format=3 uid="uid://ddnudxwrnwqj"]
 
+[ext_resource type="Script" uid="uid://cj18g4y1b363v" path="res://Micro Games/animatronic_timer.gd" id="1_d2m5h"]
 [ext_resource type="Script" uid="uid://c2hbmbsxxwp1i" path="res://Micro Games/door_manager.gd" id="1_i3lo6"]
+[ext_resource type="Texture2D" uid="uid://dy7nghdrjwd2c" path="res://Assets/Art/FNAF/office_bg_complete.png" id="1_ptwqx"]
+[ext_resource type="Script" uid="uid://dxtl2i1m4c3iw" path="res://Micro Games/camera_manager.gd" id="2_ptwqx"]
 [ext_resource type="Texture2D" uid="uid://b487qd32cif3x" path="res://icon.svg" id="2_q0uv4"]
-[ext_resource type="Texture2D" uid="uid://djr3rjnjuytq3" path="res://Assets/Art/FNAF/Left_Door_Placeholder.png" id="3_lhksp"]
-[ext_resource type="Texture2D" uid="uid://vobadiiydala" path="res://Assets/Art/FNAF/Front_Door_Placeholder.png" id="5_ptwqx"]
-[ext_resource type="Texture2D" uid="uid://c6jwdncvnloic" path="res://Assets/Art/FNAF/Right_Door_Placeholder.png" id="6_3mnsv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0uv4"]
+[ext_resource type="Texture2D" uid="uid://br3kulrrug4nf" path="res://Assets/Art/FNAF/Cameras/monster_face.png" id="4_4s8by"]
+[ext_resource type="Texture2D" uid="uid://cpruh6bnh5ktq" path="res://Assets/Art/FNAF/Cameras/Camera_Full.png" id="5_d16qn"]
+[ext_resource type="Texture2D" uid="uid://bs1gj4dy63ful" path="res://Assets/Art/FNAF/Cameras/Camera1.png" id="5_tk5ve"]
+[ext_resource type="Texture2D" uid="uid://2m258jirdnmj" path="res://Assets/Art/FNAF/Cameras/cam_button.png" id="5_wqyt7"]
+[ext_resource type="Texture2D" uid="uid://u770da7ckvqs" path="res://Assets/Art/FNAF/Door_Renders_FiveNights/Door_Renders_FiveNights/Door1-LIGHT_Baked.png" id="6_3mnsv"]
+[ext_resource type="Texture2D" uid="uid://dn0io5obm2gxl" path="res://Assets/Art/FNAF/Door_Renders_FiveNights/Door_Renders_FiveNights/Door3-LIGHT_Baked.png" id="6_ptwqx"]
+[ext_resource type="Texture2D" uid="uid://djchyarbqsm8d" path="res://Assets/Art/FNAF/Cameras/Camera1_bad.png" id="6_s5tdn"]
+[ext_resource type="Texture2D" uid="uid://cxt33c2oebelc" path="res://Assets/Art/FNAF/Cameras/Camera2.png" id="6_v8qbi"]
+[ext_resource type="Texture2D" uid="uid://b87vib4e8q44y" path="res://Assets/Art/FNAF/Door_Renders_FiveNights/Door_Renders_FiveNights/Door2-LIGHT_Baked.png" id="7_ptwqx"]
+[ext_resource type="Texture2D" uid="uid://b7yhuaoau5m8m" path="res://Assets/Art/FNAF/Buttons/buttonLEFT.png" id="7_v8qbi"]
+[ext_resource type="Texture2D" uid="uid://d2vst2x5vmvct" path="res://Assets/Art/FNAF/Buttons/buttonTOP.png" id="8_51kfl"]
+[ext_resource type="Texture2D" uid="uid://3j1x3teqqiqe" path="res://Assets/Art/FNAF/Cameras/Camera2_bad.png" id="8_d16qn"]
+[ext_resource type="Texture2D" uid="uid://bguhto8lihojp" path="res://Assets/Art/FNAF/Buttons/buttonRIGHT.png" id="9_cdquo"]
+[ext_resource type="Texture2D" uid="uid://dkm54vslglhni" path="res://Assets/Art/FNAF/Cameras/Camera3.png" id="9_wqyt7"]
+[ext_resource type="Texture2D" uid="uid://dh13njdsg7ggl" path="res://Assets/Art/FNAF/Cameras/Camera3_bad.png" id="10_4s8by"]
+[ext_resource type="Texture2D" uid="uid://b47uqbgares4t" path="res://Assets/Art/FNAF/victory.png" id="21_8hmd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26pux"]
+size = Vector2(28.000006, 18.666668)
 
 [sub_resource type="Animation" id="Animation_lhksp"]
 length = 0.001
@@ -22,11 +37,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-375, -100)]
+"values": [Vector2(-471, -571)]
 }
 
-[sub_resource type="Animation" id="Animation_d2m5h"]
-resource_name = "left_door_drop"
+[sub_resource type="Animation" id="Animation_gbl0v"]
+resource_name = "left_door_close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -37,7 +52,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-375, -100), Vector2(-375, 0)]
+"values": [Vector2(-466.00003, -546), Vector2(-466.00003, 20)]
 }
 
 [sub_resource type="Animation" id="Animation_ptwqx"]
@@ -52,13 +67,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-375, 0), Vector2(-375, -100)]
+"values": [Vector2(-466.00003, 20), Vector2(-466.00003, -546)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3mnsv"]
 _data = {
 &"RESET": SubResource("Animation_lhksp"),
-&"left_door_drop": SubResource("Animation_d2m5h"),
+&"left_door_drop": SubResource("Animation_gbl0v"),
 &"left_door_open": SubResource("Animation_ptwqx")
 }
 
@@ -74,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -235)]
+"values": [Vector2(0, -465)]
 }
 
 [sub_resource type="Animation" id="Animation_jrm40"]
@@ -89,10 +104,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -235), Vector2(0, -100)]
+"values": [Vector2(0, -481), Vector2(0, -96.00003)]
 }
 
-[sub_resource type="Animation" id="Animation_gbl0v"]
+[sub_resource type="Animation" id="Animation_cdquo"]
 resource_name = "front_door_open"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -104,14 +119,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -100), Vector2(0, -235)]
+"values": [Vector2(0, -96.00003), Vector2(0, -481)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tk5ve"]
 _data = {
 &"RESET": SubResource("Animation_3mnsv"),
 &"front_door_drop": SubResource("Animation_jrm40"),
-&"front_door_open": SubResource("Animation_gbl0v")
+&"front_door_open": SubResource("Animation_cdquo")
 }
 
 [sub_resource type="Animation" id="Animation_v8qbi"]
@@ -126,7 +141,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(375, -100)]
+"values": [Vector2(446, -571)]
 }
 
 [sub_resource type="Animation" id="Animation_51kfl"]
@@ -141,10 +156,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(375, -100), Vector2(375, 0)]
+"values": [Vector2(447.00003, -539), Vector2(447.00003, -7)]
 }
 
-[sub_resource type="Animation" id="Animation_cdquo"]
+[sub_resource type="Animation" id="Animation_s5tdn"]
 resource_name = "right_door_open"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -156,52 +171,96 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(375, 0), Vector2(375, -100)]
+"values": [Vector2(447.00003, -7), Vector2(447.00003, -539)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2331e"]
 _data = {
 &"RESET": SubResource("Animation_v8qbi"),
 &"right_door_drop": SubResource("Animation_51kfl"),
-&"right_door_open": SubResource("Animation_cdquo")
+&"right_door_open": SubResource("Animation_s5tdn")
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_noglh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0uv4"]
+size = Vector2(213, 153)
 
-[sub_resource type="ImageTexture" id="ImageTexture_iv18s"]
+[sub_resource type="Animation" id="Animation_tk5ve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_2331e"]
+resource_name = "jumpscare"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5tdn"]
+_data = {
+&"RESET": SubResource("Animation_tk5ve"),
+&"jumpscare": SubResource("Animation_2331e")
+}
 
 [node name="Mama_Node" type="Node2D" unique_id=79326296]
 
-[node name="Animatronic_Timer" type="Node2D" parent="." unique_id=975275562]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=192185386]
 
-[node name="Camera_Manager" type="Node2D" parent="." unique_id=914780569]
-
-[node name="cam_1" type="Area2D" parent="Camera_Manager" unique_id=1261301208]
-
-[node name="cam_1_collide" type="CollisionShape2D" parent="Camera_Manager/cam_1" unique_id=1786896628]
-shape = SubResource("RectangleShape2D_q0uv4")
-
-[node name="cam_1_sprite" type="Sprite2D" parent="Camera_Manager/cam_1" unique_id=1957612183]
-
-[node name="cam_2" type="Area2D" parent="Camera_Manager" unique_id=1362410737]
-
-[node name="cam_2_collide" type="CollisionShape2D" parent="Camera_Manager/cam_2" unique_id=779210282]
-shape = SubResource("RectangleShape2D_q0uv4")
-
-[node name="cam_2_sprite" type="Sprite2D" parent="Camera_Manager/cam_2" unique_id=839065448]
-
-[node name="cam_3" type="Area2D" parent="Camera_Manager" unique_id=527967131]
-
-[node name="cam_3_collide" type="CollisionShape2D" parent="Camera_Manager/cam_3" unique_id=1010623225]
-shape = SubResource("RectangleShape2D_q0uv4")
-
-[node name="cam_3_sprite" type="Sprite2D" parent="Camera_Manager/cam_3" unique_id=970756664]
+[node name="bg_darkness" type="Sprite2D" parent="." unique_id=1326287264]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-3.027916e-05, -0.49999523)
+scale = Vector2(0.61, 0.6)
+texture = ExtResource("5_wqyt7")
 
 [node name="Door_Manager" type="Node2D" parent="." unique_id=2026689661]
 script = ExtResource("1_i3lo6")
 
 [node name="left_button" type="Area2D" parent="Door_Manager" unique_id=1706703107]
-position = Vector2(-518, 0)
+top_level = true
+position = Vector2(-545, 8)
+scale = Vector2(0.8, 0.8)
 metadata/_edit_group_ = true
 
 [node name="left_door_collide" type="CollisionShape2D" parent="Door_Manager/left_button" unique_id=2022035413]
@@ -210,22 +269,26 @@ shape = SubResource("RectangleShape2D_26pux")
 
 [node name="left_door_sprite" type="Sprite2D" parent="Door_Manager/left_button" unique_id=803104149]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_q0uv4")
+texture = ExtResource("7_v8qbi")
 
 [node name="front_button" type="Area2D" parent="Door_Manager" unique_id=783040120]
+top_level = true
 position = Vector2(0, -275)
 metadata/_edit_group_ = true
 
 [node name="front_door_collide" type="CollisionShape2D" parent="Door_Manager/front_button" unique_id=1930374639]
+position = Vector2(0.49999952, 0)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_26pux")
 
 [node name="front_door_sprite" type="Sprite2D" parent="Door_Manager/front_button" unique_id=30521072]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_q0uv4")
+texture = ExtResource("8_51kfl")
 
 [node name="right_button" type="Area2D" parent="Door_Manager" unique_id=851111589]
-position = Vector2(520, 0)
+top_level = true
+position = Vector2(532, 0)
+scale = Vector2(0.8, 0.8)
 metadata/_edit_group_ = true
 
 [node name="right_door_collide" type="CollisionShape2D" parent="Door_Manager/right_button" unique_id=2100789472]
@@ -234,13 +297,13 @@ shape = SubResource("RectangleShape2D_26pux")
 
 [node name="right_door_sprite" type="Sprite2D" parent="Door_Manager/right_button" unique_id=1860413817]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_q0uv4")
+texture = ExtResource("9_cdquo")
 
 [node name="left_door" type="Sprite2D" parent="Door_Manager" unique_id=1710929274]
 show_behind_parent = true
-position = Vector2(-375, -100)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_lhksp")
+position = Vector2(-471, -571)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("6_3mnsv")
 
 [node name="left_door_anim" type="AnimationPlayer" parent="Door_Manager/left_door" unique_id=951604533]
 libraries/ = SubResource("AnimationLibrary_3mnsv")
@@ -249,33 +312,136 @@ libraries/ = SubResource("AnimationLibrary_3mnsv")
 show_behind_parent = true
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, -235)
+position = Vector2(0, -465)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_ptwqx")
+texture = ExtResource("6_ptwqx")
 
 [node name="front_door_anim" type="AnimationPlayer" parent="Door_Manager/front_door" unique_id=1520873978]
 libraries/ = SubResource("AnimationLibrary_tk5ve")
 
 [node name="right_door" type="Sprite2D" parent="Door_Manager" unique_id=224845731]
 show_behind_parent = true
-position = Vector2(375, -100)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_3mnsv")
+position = Vector2(446, -571)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("7_ptwqx")
 
 [node name="right_door_anim" type="AnimationPlayer" parent="Door_Manager/right_door" unique_id=1891244232]
 libraries/ = SubResource("AnimationLibrary_2331e")
 
-[node name="bg_darkness_layer" type="Sprite2D" parent="." unique_id=226952187]
-position = Vector2(-584, -330)
-scale = Vector2(1165.0001, 660)
-texture = SubResource("ImageTexture_noglh")
+[node name="bg_office" type="Sprite2D" parent="." unique_id=226952187]
+position = Vector2(-3.027916e-05, -0.49999523)
+scale = Vector2(0.61, 0.6)
+texture = ExtResource("1_ptwqx")
 
-[node name="bg_office_layer" type="Sprite2D" parent="." unique_id=1591945168]
-position = Vector2(-583, -329)
-scale = Vector2(1162, 657.00006)
-texture = SubResource("ImageTexture_iv18s")
+[node name="camera_manager" type="Node2D" parent="." unique_id=914780569]
+script = ExtResource("2_ptwqx")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=192185386]
+[node name="cam_1" type="Area2D" parent="camera_manager" unique_id=1261301208]
+top_level = true
+position = Vector2(-320, 101)
+scale = Vector2(0.5, 0.55)
+metadata/_edit_group_ = true
+
+[node name="cam_1_collide" type="CollisionShape2D" parent="camera_manager/cam_1" unique_id=1786896628]
+position = Vector2(43.5, 11.5)
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_1_sprite" type="Sprite2D" parent="camera_manager/cam_1" unique_id=1957612183]
+position = Vector2(44, 12)
+scale = Vector2(0.125, 0.14)
+texture = ExtResource("5_wqyt7")
+
+[node name="cam_2" type="Area2D" parent="camera_manager" unique_id=1362410737]
+top_level = true
+position = Vector2(-298, 191)
+scale = Vector2(0.5, 0.55)
+metadata/_edit_group_ = true
+
+[node name="cam_2_collide" type="CollisionShape2D" parent="camera_manager/cam_2" unique_id=779210282]
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_2_sprite" type="Sprite2D" parent="camera_manager/cam_2" unique_id=839065448]
+scale = Vector2(0.125, 0.14)
+texture = ExtResource("5_wqyt7")
+
+[node name="cam_3" type="Area2D" parent="camera_manager" unique_id=527967131]
+top_level = true
+position = Vector2(-298, 275)
+scale = Vector2(0.5, 0.55)
+metadata/_edit_group_ = true
+
+[node name="cam_3_collide" type="CollisionShape2D" parent="camera_manager/cam_3" unique_id=1010623225]
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_3_sprite" type="Sprite2D" parent="camera_manager/cam_3" unique_id=970756664]
+scale = Vector2(0.125, 0.14)
+texture = ExtResource("5_wqyt7")
+
+[node name="camera_base" type="Sprite2D" parent="camera_manager" unique_id=1511322330]
+top_level = true
+position = Vector2(-113, 192)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_d16qn")
+
+[node name="cameras" type="Sprite2D" parent="camera_manager" unique_id=32356776]
+top_level = true
+position = Vector2(-61, 192.00002)
+scale = Vector2(2.75, 1.75)
+texture = ExtResource("2_q0uv4")
+metadata/_edit_group_ = true
+
+[node name="cam1_good" type="Sprite2D" parent="camera_manager/cameras" unique_id=1007289175]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("5_tk5ve")
+
+[node name="cam1_bad" type="Sprite2D" parent="camera_manager/cameras" unique_id=1961353295]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("6_s5tdn")
+
+[node name="cam2_good" type="Sprite2D" parent="camera_manager/cameras" unique_id=1958740168]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("6_v8qbi")
+
+[node name="cam2_bad" type="Sprite2D" parent="camera_manager/cameras" unique_id=214767181]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("8_d16qn")
+
+[node name="cam3_good" type="Sprite2D" parent="camera_manager/cameras" unique_id=1615118453]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("9_wqyt7")
+
+[node name="cam3_bad" type="Sprite2D" parent="camera_manager/cameras" unique_id=1655413092]
+scale = Vector2(0.065, 0.12)
+texture = ExtResource("10_4s8by")
+
+[node name="cam_blank" type="Sprite2D" parent="camera_manager/cameras" unique_id=1591342158]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_q0uv4")
+
+[node name="Animatronic_Threat" type="Node2D" parent="." unique_id=975275562]
+top_level = true
+script = ExtResource("1_d2m5h")
+
+[node name="Animatronic_Timer" type="Timer" parent="Animatronic_Threat" unique_id=535542050]
+wait_time = 10.0
+autostart = true
+
+[node name="jumpscare_sprite" type="Sprite2D" parent="Animatronic_Threat" unique_id=308789223]
+visible = false
+top_level = true
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_4s8by")
+
+[node name="jumpscare_anim" type="AnimationPlayer" parent="Animatronic_Threat/jumpscare_sprite" unique_id=1671037082]
+libraries/ = SubResource("AnimationLibrary_s5tdn")
+
+[node name="victory_mark" type="Sprite2D" parent="Animatronic_Threat" unique_id=708059794]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21_8hmd3")
+
+[node name="victory_anim" type="AnimationPlayer" parent="Animatronic_Threat/victory_mark" unique_id=1325806491]
+libraries/ = SubResource("AnimationLibrary_s5tdn")
 
 [connection signal="mouse_entered" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_entered"]
 [connection signal="mouse_exited" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_exited"]
@@ -283,3 +449,10 @@ texture = SubResource("ImageTexture_iv18s")
 [connection signal="mouse_exited" from="Door_Manager/front_button" to="Door_Manager" method="_on_front_button_mouse_exited"]
 [connection signal="mouse_entered" from="Door_Manager/right_button" to="Door_Manager" method="_on_right_button_mouse_entered"]
 [connection signal="mouse_exited" from="Door_Manager/right_button" to="Door_Manager" method="_on_right_button_mouse_exited"]
+[connection signal="mouse_entered" from="camera_manager/cam_1" to="camera_manager" method="_on_cam_1_mouse_entered"]
+[connection signal="mouse_exited" from="camera_manager/cam_1" to="camera_manager" method="_on_cam_1_mouse_exited"]
+[connection signal="mouse_entered" from="camera_manager/cam_2" to="camera_manager" method="_on_cam_2_mouse_entered"]
+[connection signal="mouse_exited" from="camera_manager/cam_2" to="camera_manager" method="_on_cam_2_mouse_exited"]
+[connection signal="mouse_entered" from="camera_manager/cam_3" to="camera_manager" method="_on_cam_3_mouse_entered"]
+[connection signal="mouse_exited" from="camera_manager/cam_3" to="camera_manager" method="_on_cam_3_mouse_exited"]
+[connection signal="timeout" from="Animatronic_Threat/Animatronic_Timer" to="Animatronic_Threat" method="_on_animatronic_timer_timeout"]
