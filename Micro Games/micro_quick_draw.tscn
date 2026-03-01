@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u5mdqa3vkqrv" path="res://Scripts/micro_quick_draw.gd" id="1_1rblv"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="2_04cm2"]
+[ext_resource type="Texture2D" uid="uid://5ir277g24c6q" path="res://Assets/Art/WesternDOG/WesternDOG_BG.png" id="2_bner8"]
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="3_bner8"]
 
 [sub_resource type="Animation" id="Animation_04cm2"]
@@ -43,6 +44,11 @@ _data = {
 
 [node name="micro_quick_draw" type="Node2D" unique_id=177560595]
 script = ExtResource("1_1rblv")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=612224198]
+position = Vector2(576, 324.99997)
+scale = Vector2(0.6041666, 0.6111111)
+texture = ExtResource("2_bner8")
 
 [node name="DRAW" type="Label" parent="." unique_id=6616050]
 modulate = Color(1, 1, 1, 0)

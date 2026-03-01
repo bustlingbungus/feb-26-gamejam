@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="8_vudr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v62fm"]
-size = Vector2(121, 60)
+size = Vector2(129.75, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v62fm"]
 radius = 210.2879
@@ -198,7 +198,7 @@ flip_h = true
 [node name="Area2D" type="Area2D" parent="Dog" unique_id=78310088]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/Area2D" unique_id=1469154332]
-position = Vector2(10, -6)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_v62fm")
 
 [node name="Activator" type="Timer" parent="." unique_id=1659588209]
