@@ -326,12 +326,25 @@ color = Color(0, 0, 0, 0.78431374)
 [node name="Controls" type="Label" parent="InfoDisplay" unique_id=86531800]
 layout_mode = 0
 offset_left = 8.0
-offset_top = -39.0
+offset_top = -59.0
 offset_right = 399.0
-offset_bottom = 210.0
+offset_bottom = 190.0
 theme_override_font_sizes/font_size = 32
 text = "Controls:
---------------------------------------"
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Dash2" type="Label" parent="InfoDisplay" unique_id=1288642985]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -37.0
+offset_right = 389.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 32
+text = "
+-------------------------------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -364,6 +377,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="Label2" type="Label" parent="InfoDisplay" unique_id=988290119]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 208.0
+offset_right = 386.0
+offset_bottom = 349.0
+theme_override_font_sizes/font_size = 22
+text = "
+Text Goes Here
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
 [node name="Sprite2D" type="Sprite2D" parent="InfoDisplay" unique_id=761214238]
 position = Vector2(199, 452)
 scale = Vector2(0.2, 0.2)
@@ -381,6 +409,7 @@ speed_scale = 3.0
 [node name="Score" parent="." unique_id=1078211157 instance=ExtResource("50_qfgtg")]
 
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
+visible = false
 position = Vector2(577.5, 320.00003)
 scale = Vector2(0.6411459, 0.61759263)
 sprite_frames = SubResource("SpriteFrames_fh3ea")
@@ -388,6 +417,7 @@ autoplay = "default"
 speed_scale = 4.0
 
 [node name="CurtainClose" type="AnimatedSprite2D" parent="." unique_id=1109573986]
+visible = false
 position = Vector2(577.5, 320)
 scale = Vector2(0.64, 0.61)
 sprite_frames = SubResource("SpriteFrames_avxg7")

@@ -15,7 +15,7 @@ var last_microgame = 1
 
 
 var score = 0
-var lives
+var lives = 3
 
 func add_score():
 	score += 1

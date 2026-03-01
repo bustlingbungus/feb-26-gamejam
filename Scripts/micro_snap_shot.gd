@@ -49,6 +49,7 @@ func caught_result():
 	else:
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/pgwrong.mp3")
 		sound_manager.audio_player.play()
+		Global.lose_lives()
 	#await get_tree().create_timer(3).timeout
 	micro_swticher.play_anim()
 
