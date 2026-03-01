@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://coks7w13pioni"]
+
+[ext_resource type="Script" uid="uid://b2v6gfkqud4o1" path="res://Scripts/micro_tug.gd" id="1_d1es2"]
+[ext_resource type="Texture2D" uid="uid://byltwlkglb63r" path="res://Assets/Art/tug_of_war/BG_TugofWar.png" id="2_7ikuv"]
+[ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="2_g6nqj"]
+[ext_resource type="Texture2D" uid="uid://dxrqxplkhec8f" path="res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png" id="3_w4mvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1es2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4mvl"]
+
+[node name="MicroTug" type="Node2D" unique_id=725630967]
+script = ExtResource("1_d1es2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=577143731]
+position = Vector2(597, 397)
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("2_7ikuv")
+
+[node name="AudioManager" parent="." unique_id=767795503 instance=ExtResource("2_g6nqj")]
+
+[node name="MusicManager" parent="." unique_id=938182038 instance=ExtResource("2_g6nqj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=124125138]
+position = Vector2(591, 399)
+texture = ExtResource("3_w4mvl")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=475620306]
+position = Vector2(-12, -52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1901041684]
+scale = Vector2(0.30466723, 20.999987)
+shape = SubResource("RectangleShape2D_d1es2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1404637858]
+position = Vector2(905, 382)
+scale = Vector2(-1.9114708, 2.6269333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=877504143]
+shape = SubResource("RectangleShape2D_w4mvl")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=127732752]
+position = Vector2(339, 375)
+scale = Vector2(-1.9114708, 2.6269333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=434369865]
+shape = SubResource("RectangleShape2D_w4mvl")
+
+[node name="Timer" type="Timer" parent="." unique_id=1818210057]
+wait_time = 0.00999999999999999
+autostart = true
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
