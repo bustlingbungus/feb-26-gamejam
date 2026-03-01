@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxhwgummndgqr"
+path="res://.godot/imported/CLUB SANDWICH-JVB.mp3-c3bd667c3cda9e0272e67011e979827f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/FridayNightFunkin/CLUB SANDWICH-JVB.mp3"
+dest_files=["res://.godot/imported/CLUB SANDWICH-JVB.mp3-c3bd667c3cda9e0272e67011e979827f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

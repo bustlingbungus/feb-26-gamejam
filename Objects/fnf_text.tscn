@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://xworncpu76t2"]
+
+[ext_resource type="Script" uid="uid://cv8tn6bi1xajy" path="res://Scripts/FridayNightFunkin/fnf_text.gd" id="1_8fm0m"]
+[ext_resource type="Texture2D" uid="uid://c058pmko610vu" path="res://Assets/Art/FridayNightFunkin/fnf_win.png" id="2_m1lyv"]
+[ext_resource type="Texture2D" uid="uid://b53jwb43psa8t" path="res://Assets/Art/FridayNightFunkin/fnf_lose.png" id="3_kdykm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_df0bh"]
+load_path = "res://.godot/imported/fnf_yourturn.png-857f1960cc141164585da7b4cd6d543a.ctex"
+
+[node name="FnfYourturn" type="Node2D" unique_id=1753842443]
+script = ExtResource("1_8fm0m")
+
+[node name="yourturn" type="Sprite2D" parent="." unique_id=1810454353]
+visible = false
+position = Vector2(550, 600)
+scale = Vector2(0.95, 0.95)
+texture = SubResource("CompressedTexture2D_df0bh")
+
+[node name="wintext" type="Sprite2D" parent="." unique_id=1674494250]
+visible = false
+position = Vector2(500, 600)
+texture = ExtResource("2_m1lyv")
+
+[node name="losetext" type="Sprite2D" parent="." unique_id=1662241071]
+visible = false
+position = Vector2(500, 600)
+texture = ExtResource("3_kdykm")

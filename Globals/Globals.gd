@@ -10,6 +10,7 @@ enum ArrowDir
 	RIGHT
 }
 
+
 var next_microgame = 0
 var last_microgame = 1
 var score = 0

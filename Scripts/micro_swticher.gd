@@ -34,6 +34,9 @@ func switch():
 func intermission_switch():
 	rng.randomize()
 	var x = rng.randi_range(0, Games.size() - 1)
+	while x == Global.last_microgame:
+		x = rng.randi_range(0, Games.size() - 1)
+		
 	if counter >= 3:
 		match ignore:
 			0:

@@ -5,7 +5,10 @@ extends Node
 @export var fnfgirl : Node2D
 @export var fnfboy : Node2D
 
+@export var yourTurnText : PackedScene
+
 @export var TimeBetweenTurns : float = 1.0
+@export var GameStartTime : float = 3.0
 
 @export var SpawnSpeed : float = 1.0
 @export var ArrowSpeed : float = 100.0
@@ -16,7 +19,7 @@ extends Node
 @export var CountScaling : float = 1
 @export var TurnScaling : float = 1
 
-var gameOver = false
+var gameOver : bool = false
 
 var activePlayer : Node2D
 var spawn_scale : float = 1
@@ -34,6 +37,7 @@ var turn_switch_timer : float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	turn_time = TimeBetweenTurns
+	turn_switch_timer = GameStartTime
 	req_directions = Array()
 	player_arrows = Array()
 
@@ -57,6 +61,9 @@ func SwitchSides() -> void:
 	player_arrows.clear()
 	if activePlayer == fnfgirl:
 		activePlayer = fnfboy
+		var text = yourTurnText.instantiate()
+		text.SetText("Your Turn")
+		add_child(text)
 	else:
 		Gamemode.NewRound()
 		activePlayer = fnfgirl
