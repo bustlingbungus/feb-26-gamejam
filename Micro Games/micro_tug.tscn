@@ -38,18 +38,18 @@ position = Vector2(-12, -52)
 scale = Vector2(0.30466723, 20.999987)
 shape = SubResource("RectangleShape2D_d1es2")
 
-[node name="you" type="Area2D" parent="." unique_id=1404637858]
+[node name="Area2D" type="Area2D" parent="." unique_id=1404637858]
 position = Vector2(905, 382)
 scale = Vector2(-1.9114708, 2.6269333)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="you" unique_id=877504143]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=877504143]
 shape = SubResource("RectangleShape2D_w4mvl")
 
-[node name="enemy" type="Area2D" parent="." unique_id=127732752]
+[node name="Area2D2" type="Area2D" parent="." unique_id=127732752]
 position = Vector2(339, 375)
 scale = Vector2(-1.9114708, 2.6269333)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=434369865]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=434369865]
 shape = SubResource("RectangleShape2D_w4mvl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1818210057]
