@@ -53,6 +53,11 @@ func menu_switch():
 	get_tree().change_scene_to_file(dogshow)
 
 
+func game_over_switch():
+	# Swithces scenes
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
+
 func play_anim():
 	ender.show()
 	ender.play("default")

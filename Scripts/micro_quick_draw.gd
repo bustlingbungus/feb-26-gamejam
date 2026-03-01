@@ -6,6 +6,8 @@ extends Node2D
 @onready var duel_decider = $Duel_Decider
 @onready var duel_anim_player = $DRAW/AnimationPlayer
 @onready var rng = RandomNumberGenerator.new()
+@onready var micro_swticher: Node2D = $"Micro-Swticher"
+
 
 var input_active = false
 var lose_condition = false
@@ -15,6 +17,10 @@ var shot = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#RNG Generation
+	
+	micro_swticher.starter.show()
+	micro_swticher.starter.play()
+	
 	rng.randomize()
 	var x = rng.randi_range(6, 10)
 	# Setting Timer time

@@ -409,7 +409,6 @@ speed_scale = 3.0
 [node name="Score" parent="." unique_id=1078211157 instance=ExtResource("50_qfgtg")]
 
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
-visible = false
 position = Vector2(577.5, 320.00003)
 scale = Vector2(0.6411459, 0.61759263)
 sprite_frames = SubResource("SpriteFrames_fh3ea")
@@ -417,7 +416,6 @@ autoplay = "default"
 speed_scale = 4.0
 
 [node name="CurtainClose" type="AnimatedSprite2D" parent="." unique_id=1109573986]
-visible = false
 position = Vector2(577.5, 320)
 scale = Vector2(0.64, 0.61)
 sprite_frames = SubResource("SpriteFrames_avxg7")
