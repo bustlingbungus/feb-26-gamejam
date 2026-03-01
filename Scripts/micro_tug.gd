@@ -4,6 +4,7 @@ extends Node
 @onready var area_2d_2: Area2D = $Area2D2
 @onready var audio_manager: Node = $AudioManager
 @onready var music_manager: Node = $MusicManager
+var is_won = false
 
 var rng = RandomNumberGenerator.new()
 var x : int = 0
@@ -29,10 +30,17 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("floppa")
 	if area == area_2d: #WIN condition
 		print("right")
+	
+	if is_won == false:
+		is_won = true   
 		
+		
+	#if this variable has been activated once, win achieved
 		audio_manager.load_sound("res://Assets/Sounds/SnapShot/lightskin-rizz-sin-city.mp3")
 		audio_manager.start()
 		await get_tree().create_timer(2.0).timeout
+		#release from prison
+		
  
 	if area == area_2d_2: #LOSE condition
 		audio_manager.load_sound("res://Assets/Sounds/SnapShot/metal-pipe-clang.mp3")
