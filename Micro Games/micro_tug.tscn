@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b2v6gfkqud4o1" path="res://Scripts/micro_tug.gd" id="1_d1es2"]
 [ext_resource type="Texture2D" uid="uid://byltwlkglb63r" path="res://Assets/Art/tug_of_war/BG_TugofWar.png" id="2_7ikuv"]
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="2_g6nqj"]
+[ext_resource type="Script" uid="uid://cusju6d6f70xc" path="res://Scripts/sound_manager.gd" id="3_7ikuv"]
 [ext_resource type="Texture2D" uid="uid://dxrqxplkhec8f" path="res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png" id="3_w4mvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1es2"]
@@ -17,7 +18,11 @@ position = Vector2(597, 397)
 scale = Vector2(1.17, 1.17)
 texture = ExtResource("2_7ikuv")
 
-[node name="AudioManager" parent="." unique_id=767795503 instance=ExtResource("2_g6nqj")]
+[node name="AudioManager" type="Node" parent="." unique_id=767795503]
+script = ExtResource("3_7ikuv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager" unique_id=1458877627]
+volume_db = -20.0
 
 [node name="MusicManager" parent="." unique_id=938182038 instance=ExtResource("2_g6nqj")]
 
@@ -51,5 +56,6 @@ shape = SubResource("RectangleShape2D_w4mvl")
 wait_time = 0.00999999999999999
 autostart = true
 
-[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

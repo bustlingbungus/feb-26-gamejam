@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="3_bner8"]
 [ext_resource type="Texture2D" uid="uid://c0aflo5tlp3g6" path="res://Assets/Art/WesternDOG/WesternDOG_ENEMYArmGUN.png" id="5_cmohv"]
 [ext_resource type="Texture2D" uid="uid://6i40yb8gfgsv" path="res://Assets/Art/WesternDOG/WesternDOG_EnemyDog.png" id="6_sgj3a"]
-[ext_resource type="Script" uid="uid://cusju6d6f70xc" path="res://Scripts/sound_manager.gd" id="8_b32c3"]
 [ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="9_sgj3a"]
 
 [sub_resource type="Animation" id="Animation_04cm2"]
@@ -85,7 +84,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_57efd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=500751488]
-position = Vector2(357, 445)
+position = Vector2(356.99997, 444.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_5gxgo")
 
@@ -119,11 +118,7 @@ libraries/ = SubResource("AnimationLibrary_5gxgo")
 
 [node name="SoundManager" parent="." unique_id=767795503 instance=ExtResource("3_bner8")]
 
-[node name="MusicManager" type="Node" parent="." unique_id=1865837435]
-script = ExtResource("8_b32c3")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager" unique_id=1458877627]
-volume_db = -15.0
+[node name="MusicManager" parent="." unique_id=1865837435 instance=ExtResource("3_bner8")]
 
 [node name="Duel_Starter" type="Timer" parent="." unique_id=594569465]
 wait_time = 6.0
@@ -138,6 +133,7 @@ one_shot = true
 offset_bottom = 92.0
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("2_04cm2")]
+visible = false
 
 [connection signal="timeout" from="Duel_Starter" to="." method="_on_duel_timeout"]
 [connection signal="timeout" from="Duel_Decider" to="." method="_on_duel_decider_timeout"]

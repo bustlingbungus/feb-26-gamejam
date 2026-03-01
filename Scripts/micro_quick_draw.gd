@@ -7,6 +7,10 @@ extends Node2D
 @onready var duel_anim_player = $DRAW/AnimationPlayer
 @onready var rng = RandomNumberGenerator.new()
 @onready var micro_swticher: Node2D = $"Micro-Swticher"
+@onready var player: Sprite2D = $Player/Sprite2D
+@onready var enemy: Sprite2D = $Enemy/Sprite2D
+@onready var player_arm: Sprite2D = $Player/Arm
+@onready var enemy_arm: Sprite2D = $Enemy/Arm
 
 
 var input_active = false
@@ -20,6 +24,8 @@ func _ready() -> void:
 	
 	micro_swticher.starter.show()
 	micro_swticher.starter.play()
+	music_manager.load_sound("res://Assets/Sounds/SnapShot/shootout.mp3")
+	music_manager.start()
 	
 	rng.randomize()
 	var x = rng.randi_range(6, 10)
@@ -33,30 +39,48 @@ func _process(delta: float) -> void:
 		if input_active && !lose_condition:
 			win_condition()
 		if !input_active && !lose_condition:
-			print("Early shot")
+			early_lose_condition()
 		shot -= 1  
 
 
 func win_condition():
+	player_arm.show()
+	enemy.position = Vector2(357, 530)
+	enemy.texture = load("res://Assets/Art/WesternDOG/WesternDOG_EnemyDogDEAD.png")
 	win = true
 	print("w")
+	Global.add_score()
+	ending()
 
 
 func early_lose_condition():
-	pass
+	player_arm.show()
+	Global.lose_lives()
+	enemy.position = Vector2(357, 530)
+	enemy.texture = load("res://Assets/Art/WesternDOG/WesternDOG_EnemyDogDEAD.png")
+	ending()
 
 
 func late_lose_condition():
-	pass
+	lose_condition = true
+	input_active = false
+	enemy_arm.show()
+	player.position = Vector2(357, 530)
+	player.texture = load("res://Assets/Art/WesternDOG/WesternDOG_NormalDogDEAD.png")
+	Global.lose_lives()
+	micro_swticher.play_anim()
 
+
+func ending():
+	await get_tree().create_timer(2).timeout
+	micro_swticher.play_anim()
 
 func _on_duel_timeout() -> void:
 	input_active = true
-	duel_anim_player.play("Flash")
+	duel_anim_player.play("alt")
 	duel_decider.start()
  
 
 func _on_duel_decider_timeout() -> void:
-	lose_condition = true
-	input_active = false
-	print("L")
+	if !win:
+		late_lose_condition()

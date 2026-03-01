@@ -40,7 +40,7 @@ func intermission_switch():
 				pass
 	# Swithces scenes
 	Global.next_microgame = x
-	Global.last_microgame = x
+	Global.last_microgame = 0
 	get_tree().change_scene_to_file(dogshow)
 	
 

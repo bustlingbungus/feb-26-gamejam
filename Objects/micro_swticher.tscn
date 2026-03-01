@@ -170,7 +170,7 @@ animations = [{
 
 [node name="Micro-Swticher" type="Node2D" unique_id=1138590153]
 script = ExtResource("1_smurp")
-Games = ["res://Micro Games/micro_snap_shot.tscn", "res://Micro Games/micro_tinder.tscn"]
+Games = ["res://Micro Games/micro_snap_shot.tscn", "res://Micro Games/micro_tinder.tscn", "res://Micro Games/micro_quick_draw.tscn", "res://Micro Games/micro_platformer.tscn", "res://Micro Games/micro_tug.tscn"]
 
 [node name="Ender" type="AnimatedSprite2D" parent="." unique_id=1582419179]
 position = Vector2(572.50006, 324)

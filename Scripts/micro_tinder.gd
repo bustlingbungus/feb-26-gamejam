@@ -75,9 +75,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 			# end game
 		
 		else: 
+			Global.lose_lives()
+			
 			x.visible = true
 			heart_player.play("x")
-			Global.lose_lives()
 		animation_player.play("fade_right")
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/woof-woof-flo-flo.mp3")
 		sound_manager.start() #test

@@ -355,7 +355,7 @@ offset_left = 8.0
 offset_top = 99.0
 offset_right = 384.0
 offset_bottom = 240.0
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 22
 text = "
 - Space Bar -
 "
@@ -393,6 +393,7 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="Sprite2D" type="Sprite2D" parent="InfoDisplay" unique_id=761214238]
+texture_filter = 1
 position = Vector2(199, 452)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("47_pkh00")
@@ -407,6 +408,7 @@ speed_scale = 3.0
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("49_kmty7")]
 
 [node name="Score" parent="." unique_id=1078211157 instance=ExtResource("50_qfgtg")]
+offset_bottom = 97.0
 
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
 position = Vector2(577.5, 320.00003)

@@ -252,6 +252,7 @@ libraries/ = SubResource("AnimationLibrary_epit8")
 autoplay = &"defualt"
 
 [node name="Score" parent="." unique_id=1078211157 instance=ExtResource("8_vudr0")]
+offset_bottom = 103.0
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("7_epit8")]
 

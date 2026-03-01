@@ -41,5 +41,17 @@ func micro_selection_assosiation():
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
 			label2.text = "Attracted to the US postal service."
 		2:
-			label.text = "- SpaceBar -"
-			sprite_2d.texture = load("res://Assets/Art/FridayNightFunkin/fnfboy.png")
+			controls.text = "Ruffus Says"
+			label.text = "- w + a + s + d / left-right-up-down keys -"
+			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
+			label2.text = "Parappa would be proud."
+		3:
+			controls.text = "Fetch"
+			label.text = "- w + a + s + d + space -"
+			sprite_2d.texture = load("res://Assets/Art/Platformer/dog pxiel.png")
+			label2.text = "Attracted to the US postal service."
+		4:
+			controls.text = "Tug of War"
+			label.text = "- Space -"
+			sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
+			label2.text = "Attracted to the US postal service."
