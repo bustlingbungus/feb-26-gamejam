@@ -12,6 +12,8 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var prev_game
 var intermission = true
+var counter = 0
+var ignore = 0
 
 
 func _ready() -> void:
@@ -32,8 +34,13 @@ func switch():
 func intermission_switch():
 	rng.randomize()
 	var x = rng.randi_range(0, Games.size() - 1)
+	if counter >= 3:
+		match ignore:
+			0:
+				pass
 	# Swithces scenes
 	Global.next_microgame = x
+	Global.last_microgame = x
 	get_tree().change_scene_to_file(dogshow)
 	
 

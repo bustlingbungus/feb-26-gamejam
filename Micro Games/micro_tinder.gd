@@ -66,6 +66,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		pass
 	if Input.is_action_just_pressed("ui_right") && inactive:
 		if image_value == 0:
+			Global.add_score()
 			heart.visible = true
 			#animation_player.stop()
 			heart_player.play("heart")
@@ -82,7 +83,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		inactive = false
 		
 		#wait for animation to be finished
-		
 		
 
 

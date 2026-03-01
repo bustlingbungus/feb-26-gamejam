@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="5_k1ybd"]
 [ext_resource type="Texture2D" uid="uid://b4mkyyoepo7yy" path="res://Assets/Art/Tinder/heart_01.png" id="6_k1ybd"]
 [ext_resource type="Texture2D" uid="uid://l81ojs0smq6n" path="res://Assets/Art/Tinder/x_01.png" id="7_ffuhc"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="8_g4wqe"]
 
 [sub_resource type="Gradient" id="Gradient_xisd0"]
 
@@ -252,11 +253,13 @@ rotation = -0.015936974
 scale = Vector2(0.33849844, 0.38348776)
 texture = ExtResource("7_ffuhc")
 
-[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("4_yqxnw")]
-
 [node name="SoundManager" parent="." unique_id=767795503 instance=ExtResource("5_k1ybd")]
 
 [node name="MusicManager" parent="." unique_id=604709452 instance=ExtResource("5_k1ybd")]
+
+[node name="Score" parent="." unique_id=1078211157 instance=ExtResource("8_g4wqe")]
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("4_yqxnw")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="HeartPlayer" to="." method="_on_heart_player_animation_finished"]

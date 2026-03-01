@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bnhn0t853um6j"]
+
+[ext_resource type="Script" uid="uid://bs37fjk844ayr" path="res://Globals/score.gd" id="1_4vekp"]
+
+[node name="Score" type="Control" unique_id=491881016]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 651.0
+script = ExtResource("1_4vekp")
+
+[node name="Score" type="Label" parent="." unique_id=1387347865]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "1000"

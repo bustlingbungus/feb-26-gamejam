@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://c7srbyec6jivy" path="res://Assets/Art/DogShow/Curtains 2/Curtain0032.png" id="46_l8365"]
 [ext_resource type="Texture2D" uid="uid://c7fw4jrtdsvx2" path="res://Assets/Art/Dog Elite Concept Art.png" id="47_pkh00"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="49_kmty7"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="50_qfgtg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vd3k6"]
 animations = [{
@@ -325,12 +326,12 @@ color = Color(0, 0, 0, 0.78431374)
 [node name="Controls" type="Label" parent="InfoDisplay" unique_id=86531800]
 layout_mode = 0
 offset_left = 8.0
-offset_top = -30.0
-offset_right = 384.0
-offset_bottom = 219.0
+offset_top = -39.0
+offset_right = 399.0
+offset_bottom = 210.0
 theme_override_font_sizes/font_size = 32
 text = "Controls:
------------------------------------"
+--------------------------------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -347,6 +348,7 @@ text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true
 
 [node name="Dash" type="Label" parent="InfoDisplay" unique_id=1258410943]
@@ -357,7 +359,7 @@ offset_right = 384.0
 offset_bottom = 322.0
 theme_override_font_sizes/font_size = 32
 text = "
------------------------------------"
+-------------------------------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -374,6 +376,10 @@ sprite_frames = SubResource("SpriteFrames_2ueuv")
 autoplay = "default"
 speed_scale = 3.0
 
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("49_kmty7")]
+
+[node name="Score" parent="." unique_id=1078211157 instance=ExtResource("50_qfgtg")]
+
 [node name="Curtain" type="AnimatedSprite2D" parent="." unique_id=554165192]
 position = Vector2(577.5, 320.00003)
 scale = Vector2(0.6411459, 0.61759263)
@@ -387,8 +393,6 @@ scale = Vector2(0.64, 0.61)
 sprite_frames = SubResource("SpriteFrames_avxg7")
 animation = &"Close"
 speed_scale = 4.0
-
-[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("49_kmty7")]
 
 [connection signal="animation_finished" from="Curtain" to="." method="_on_curtain_animation_finished"]
 [connection signal="animation_finished" from="CurtainClose" to="." method="_on_curtain_close_animation_finished"]
