@@ -6,14 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cylavxm8n8pyu" path="res://Objects/fnf_arrow.tscn" id="3_dj1b5"]
 [ext_resource type="Script" uid="uid://ugxb85fj2bl7" path="res://Scripts/FridayNightFunkin/fnfboy.gd" id="4_javse"]
 [ext_resource type="AudioStream" uid="uid://dmmqs0pc8al4p" path="res://Assets/Sounds/FridayNightFunkin/children-yaysound-effect.mp3" id="4_n7u1q"]
-[ext_resource type="AudioStream" uid="uid://dxhwgummndgqr" path="res://Assets/Sounds/FridayNightFunkin/CLUB SANDWICH-JVB.mp3" id="4_p1ye5"]
 [ext_resource type="Texture2D" uid="uid://h50l34ygek2" path="res://Assets/Art/FridayNightFunkin/oiiai_spritesheet.png" id="4_ssiec"]
 [ext_resource type="Script" uid="uid://wowlqa224b6q" path="res://Scripts/FridayNightFunkin/fnf_arrow_manager.gd" id="4_t7bki"]
 [ext_resource type="Script" uid="uid://bcmosgn30nrq7" path="res://Scripts/FridayNightFunkin/fnfgirl.gd" id="5_javse"]
 [ext_resource type="Texture2D" uid="uid://br44wdlrb13dd" path="res://Assets/Art/FridayNightFunkin/fnf_floppa_background.png" id="5_mcel8"]
 [ext_resource type="Texture2D" uid="uid://rngb766sm0gj" path="res://Assets/Art/FridayNightFunkin/fnfgirl_spritesheet.png" id="5_ssiec"]
 [ext_resource type="AudioStream" uid="uid://dtn8dijkvbrjb" path="res://Assets/Sounds/FridayNightFunkin/oiia-short.mp3" id="6_3ndj2"]
-[ext_resource type="PackedScene" uid="uid://xworncpu76t2" path="res://Objects/fnf_text.tscn" id="6_8tvkb"]
+[ext_resource type="PackedScene" uid="uid://xworncpu76t2" path="res://Objects/fnf_yourturn.tscn" id="6_8tvkb"]
 [ext_resource type="Texture2D" uid="uid://je7x37u2s7xh" path="res://Assets/Art/FridayNightFunkin/oiia-cat-31628698611-ezgif.com-gif-to-sprite-converter.png" id="6_uef0i"]
 [ext_resource type="AudioStream" uid="uid://comdtlm1d8ym6" path="res://Assets/Sounds/FridayNightFunkin/oo.mp3" id="9_jsn67"]
 [ext_resource type="AudioStream" uid="uid://dx6gwa223mrgw" path="res://Assets/Sounds/FridayNightFunkin/e.mp3" id="10_mcel8"]
@@ -23,33 +22,28 @@
 [ext_resource type="AudioStream" uid="uid://5um0vxwvalkg" path="res://Assets/Sounds/FridayNightFunkin/downdog.mp3" id="12_a6rf1"]
 [ext_resource type="AudioStream" uid="uid://ix1mmd2yw7df" path="res://Assets/Sounds/FridayNightFunkin/leftdog.mp3" id="13_0a5j3"]
 [ext_resource type="AudioStream" uid="uid://dqhucdu8rn3wb" path="res://Assets/Sounds/FridayNightFunkin/rightdog.mp3" id="14_m3avg"]
-[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="22_qcei5"]
 
-[node name="FridayNightFunkin" type="Node2D" unique_id=1417410151 node_paths=PackedStringArray("oiiai", "ArrowManager", "ApplauseSound", "bkgMusic")]
-script = ExtResource("1_1cx2k")
-oiiai = NodePath("fnfboy")
-ArrowManager = NodePath("ArrowManager")
-ApplauseSound = NodePath("ApplauseSound")
-bkgMusic = NodePath("Music")
-EndOfGameTime = 4.0
-fnfText = ExtResource("6_8tvkb")
-
-[node name="ApplauseSound" type="AudioStreamPlayer" parent="." unique_id=367243861]
-stream = ExtResource("4_n7u1q")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1225836797]
-stream = ExtResource("4_p1ye5")
-volume_db = -10.0
+[node name="FridayNightFunkin" type="Node2D" unique_id=1417410151]
 
 [node name="FnfFloppaBackground" type="Sprite2D" parent="." unique_id=1911748147]
 position = Vector2(568, 360)
 scale = Vector2(1.11, 1.11)
 texture = ExtResource("5_mcel8")
 
+[node name="Gamemode" type="Node" parent="." unique_id=2085094470 node_paths=PackedStringArray("oiiai", "ArrowManager", "ApplauseSound")]
+script = ExtResource("1_1cx2k")
+oiiai = NodePath("../fnfboy")
+ArrowManager = NodePath("../ArrowManager")
+ApplauseSound = NodePath("ApplauseSound")
+EndOfGameTime = 4.0
+
+[node name="ApplauseSound" type="AudioStreamPlayer" parent="Gamemode" unique_id=367243861]
+stream = ExtResource("4_n7u1q")
+
 [node name="ArrowManager" type="Node" parent="." unique_id=938459044 node_paths=PackedStringArray("ArrowSpawner", "Gamemode", "fnfgirl", "fnfboy")]
 script = ExtResource("4_t7bki")
 ArrowSpawner = NodePath("../ArrowSpawner")
-Gamemode = NodePath("..")
+Gamemode = NodePath("../Gamemode")
 fnfgirl = NodePath("../fnfgirl")
 fnfboy = NodePath("../fnfboy")
 yourTurnText = ExtResource("6_8tvkb")
@@ -130,14 +124,4 @@ stream = ExtResource("13_0a5j3")
 [node name="rightdog" type="AudioStreamPlayer" parent="fnfgirl" unique_id=1911728744]
 stream = ExtResource("14_m3avg")
 
-[node name="UI" parent="." unique_id=1078211157 instance=ExtResource("22_qcei5")]
-
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("1_cjxoe")]
-position = Vector2(6, 0)
-
-[node name="Label" type="Label" parent="." unique_id=1648890188]
-offset_left = 9.0
-offset_top = 616.0
-offset_right = 612.0
-offset_bottom = 644.0
-text = "Song - CLUB SANDWICH (Joey Valence & Brae)"

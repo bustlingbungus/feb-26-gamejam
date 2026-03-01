@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cusju6d6f70xc" path="res://Scripts/sound_manager.gd" id="1_dohi7"]
 
+[sub_resource type="AudioStream" id="AudioStream_fqbph"]
+
 [node name="AudioManager" type="Node" unique_id=767795503]
 script = ExtResource("1_dohi7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1458877627]
+stream = SubResource("AudioStream_fqbph")

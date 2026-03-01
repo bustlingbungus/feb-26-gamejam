@@ -30,12 +30,12 @@ func _on_curtain_close_animation_finished() -> void:
 
 func micro_selection_assosiation():
 	match Global.next_microgame:
-		0:
+		0: # photo taker
 			controls.text = "PhotoBark"
 			label.text = "- SpaceBar -"
 			sprite_2d.texture = load("res://Assets/Art/Dog Elite Concept Art.png")
 			label2.text = "When the dog doin?"
-		1:
+		1: # dog tinder
 			controls.text = "Ruff Dating Life"
 			label.text = "- Left and Right Arrow Keys -"
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")

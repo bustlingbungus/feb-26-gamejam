@@ -1,27 +1,79 @@
 extends Node
 
 @export var ArrowSpawner : Node
-@export var SpawnSpeed : float = 1.0
-@export var ArrowSpeed : float = 100.0
+@export var Gamemode : Node
 @export var fnfgirl : Node2D
 @export var fnfboy : Node2D
 
+@export var yourTurnText : PackedScene
+
+@export var TimeBetweenTurns : float = 1.0
+@export var GameStartTime : float = 3.0
+
+@export var SpawnSpeed : float = 1.0
+@export var ArrowSpeed : float = 100.0
+@export var ArrowCountRange : Vector2i = Vector2i(3, 6)
+
+@export var SpawnScaling : float = 1
+@export var SpeedScaling : float = 1
+@export var CountScaling : float = 1
+@export var TurnScaling : float = 1
+
+var gameOver : bool = false
+
 var activePlayer : Node2D
+var spawn_scale : float = 1
+var speed_scale : float = 1
+var cnt_scale : float = 1
+var turn_scale : float = 1
+
+var req_directions : Array
+var player_arrows : Array
+
+var turn_time : float
+var turn_switch_timer : float = 0.0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	activePlayer = fnfgirl
-	SpawnArrows()
+	turn_time = TimeBetweenTurns
+	turn_switch_timer = GameStartTime
+	req_directions = Array()
+	player_arrows = Array()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if ArrowSpawner == null:
+		push_error("null arrow spawner!")
+	else:
+		if !ArrowSpawner.spawning:
+			if turn_switch_timer > 0.0:
+				turn_switch_timer -= delta
+			else:			
+				SwitchSides()
+				SpawnArrows()
+				
+	HandleTopArrow()
 
 
-#func SwitchSides() -> void:
-	
+func SwitchSides() -> void:
+	player_arrows.clear()
+	if activePlayer == fnfgirl:
+		activePlayer = fnfboy
+		var text = yourTurnText.instantiate()
+		text.SetText("Your Turn")
+		add_child(text)
+	else:
+		Gamemode.NewRound()
+		activePlayer = fnfgirl
+		req_directions.clear()
+		turn_scale += TurnScaling / 10.0
+		spawn_scale += SpawnScaling / 10.0
+		speed_scale += SpeedScaling / 10.0
+		cnt_scale += CountScaling / 10.0
+		
+	turn_switch_timer = turn_time / turn_scale
 
 
 func SpawnArrows() -> void:
@@ -29,8 +81,66 @@ func SpawnArrows() -> void:
 		push_error("null arrow spawner!")
 		return
 	
-	if activePlayer:
+	if activePlayer == null:
 		push_error("couldn't find arrow targets!")
 		return
 		
-	ArrowSpawner.SpawnArrows(fnfgirl.position, 4, SpawnSpeed, ArrowSpeed)
+	var cnt : int
+	if req_directions.size() == 0:
+		cnt = randi_range(int(ArrowCountRange.x * cnt_scale), int(ArrowCountRange.y * cnt_scale))
+	else:	
+		cnt = req_directions.size()
+	ArrowSpawner.SpawnArrows(activePlayer.position, cnt, 1.0 / (SpawnSpeed * spawn_scale), ArrowSpeed * speed_scale)
+
+
+func AcceptingDirections() -> bool:
+	return activePlayer == fnfgirl
+
+func GetNextDirection() -> Glob.ArrowDir:
+	return req_directions.pop_front()
+	
+func AddDirection(dir : Glob.ArrowDir) -> void:
+	req_directions.push_back(dir)
+	
+func AddArrow(arrow : Node2D) -> void:
+	player_arrows.push_back(arrow)
+	
+func HandleTopArrow() -> void:
+	if player_arrows.size() == 0:
+		return
+	if activePlayer == fnfboy:
+		HandlePlayerInput()
+	else:
+		HandleGirlArrow()
+			
+func HandlePlayerInput() -> void:
+	var top_arrow = player_arrows[0]
+	if top_arrow.ArrowComplete():
+		top_arrow.Destroy()
+		player_arrows.pop_front()
+		Gamemode.ArrowHit(top_arrow)
+	elif DirectionalInput() || top_arrow.PassedTarget():
+		top_arrow.SetMissed()
+		player_arrows.pop_front()
+		Gamemode.ArrowMiss(top_arrow)
+		
+		
+func HandleGirlArrow() -> void:
+	var top_arrow = player_arrows[0]
+	if top_arrow.PassedTarget():
+		top_arrow.SetMissed()
+		fnfgirl.ReactToArrow(top_arrow)
+		player_arrows.pop_front()
+		
+func DirectionalInput() -> bool:
+	return Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_left") || Input.is_action_just_pressed("ui_right")
+
+
+func EndGame():
+	gameOver = true
+	turn_switch_timer = 1e99 # effectively cancel new turns
+	# clear all existing arrows
+	req_directions.clear()
+	for arrow in player_arrows:
+		arrow.Destroy()
+	player_arrows.clear()
