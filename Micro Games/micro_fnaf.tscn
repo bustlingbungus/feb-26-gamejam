@@ -3,13 +3,168 @@
 [ext_resource type="Script" uid="uid://c2hbmbsxxwp1i" path="res://Micro Games/door_manager.gd" id="1_i3lo6"]
 [ext_resource type="Texture2D" uid="uid://b487qd32cif3x" path="res://icon.svg" id="2_q0uv4"]
 [ext_resource type="Texture2D" uid="uid://djr3rjnjuytq3" path="res://Assets/Art/FNAF/Left_Door_Placeholder.png" id="3_lhksp"]
-[ext_resource type="Script" uid="uid://svnt50su7d6h" path="res://Micro Games/left_door.gd" id="4_d2m5h"]
 [ext_resource type="Texture2D" uid="uid://vobadiiydala" path="res://Assets/Art/FNAF/Front_Door_Placeholder.png" id="5_ptwqx"]
 [ext_resource type="Texture2D" uid="uid://c6jwdncvnloic" path="res://Assets/Art/FNAF/Right_Door_Placeholder.png" id="6_3mnsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0uv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26pux"]
+
+[sub_resource type="Animation" id="Animation_lhksp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-375, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_d2m5h"]
+resource_name = "left_door_drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-375, -100), Vector2(-375, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ptwqx"]
+resource_name = "left_door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-375, 0), Vector2(-375, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mnsv"]
+_data = {
+&"RESET": SubResource("Animation_lhksp"),
+&"left_door_drop": SubResource("Animation_d2m5h"),
+&"left_door_open": SubResource("Animation_ptwqx")
+}
+
+[sub_resource type="Animation" id="Animation_3mnsv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -235)]
+}
+
+[sub_resource type="Animation" id="Animation_jrm40"]
+resource_name = "front_door_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -235), Vector2(0, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_gbl0v"]
+resource_name = "front_door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -100), Vector2(0, -235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tk5ve"]
+_data = {
+&"RESET": SubResource("Animation_3mnsv"),
+&"front_door_drop": SubResource("Animation_jrm40"),
+&"front_door_open": SubResource("Animation_gbl0v")
+}
+
+[sub_resource type="Animation" id="Animation_v8qbi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_51kfl"]
+resource_name = "right_door_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(375, -100), Vector2(375, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cdquo"]
+resource_name = "right_door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(375, 0), Vector2(375, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2331e"]
+_data = {
+&"RESET": SubResource("Animation_v8qbi"),
+&"right_door_drop": SubResource("Animation_51kfl"),
+&"right_door_open": SubResource("Animation_cdquo")
+}
 
 [sub_resource type="ImageTexture" id="ImageTexture_noglh"]
 
@@ -86,21 +241,29 @@ show_behind_parent = true
 position = Vector2(-375, -100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_lhksp")
-script = ExtResource("4_d2m5h")
+
+[node name="left_door_anim" type="AnimationPlayer" parent="Door_Manager/left_door" unique_id=951604533]
+libraries/ = SubResource("AnimationLibrary_3mnsv")
 
 [node name="front_door" type="Sprite2D" parent="Door_Manager" unique_id=56643104]
 show_behind_parent = true
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, -234)
+position = Vector2(0, -235)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_ptwqx")
 
+[node name="front_door_anim" type="AnimationPlayer" parent="Door_Manager/front_door" unique_id=1520873978]
+libraries/ = SubResource("AnimationLibrary_tk5ve")
+
 [node name="right_door" type="Sprite2D" parent="Door_Manager" unique_id=224845731]
 show_behind_parent = true
-position = Vector2(375.5, -100)
+position = Vector2(375, -100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_3mnsv")
+
+[node name="right_door_anim" type="AnimationPlayer" parent="Door_Manager/right_door" unique_id=1891244232]
+libraries/ = SubResource("AnimationLibrary_2331e")
 
 [node name="bg_darkness_layer" type="Sprite2D" parent="." unique_id=226952187]
 position = Vector2(-584, -330)
