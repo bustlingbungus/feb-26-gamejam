@@ -7,18 +7,16 @@ var door_closed = 0;
 var in_left_button = false
 var in_front_button = false
 var in_right_button = false
+
 # We use these to check to see if the animations can be allowed to play
 var anim_close_checker = false
-var anim_open_checker = false
-var door_1_close = false
-var door_2_close = false
-var door_3_close = false
+var left_door_closed = false
+var front_door_closed = false
+var right_door_closed = false
 
 @onready var left_door_anim: AnimationPlayer = $left_door/left_door_anim
 @onready var front_door_anim: AnimationPlayer = $front_door/front_door_anim
 @onready var right_door_anim: AnimationPlayer = $right_door/right_door_anim
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,17 +31,20 @@ func _process(delta: float) -> void:
 	
 	match door_closed:
 		1:
-			if door_closed == 1 and anim_close_checker == true:
+			if anim_close_checker == true and left_door_closed != true:
 				left_door_anim.play("left_door_drop")
 				anim_close_checker = false
+				left_door_closed = true
 		2:
-			if door_closed == 2 and anim_close_checker == true:
+			if anim_close_checker == true and front_door_closed != true:
 				front_door_anim.play("front_door_drop")
 				anim_close_checker = false
+				front_door_closed = true
 		3:
-			if door_closed == 3 and anim_close_checker == true:
+			if anim_close_checker == true and right_door_closed != true:
 				right_door_anim.play("right_door_drop")
 				anim_close_checker = false
+				right_door_closed = true
 	# This is the if statement that allows for the animations to play, and
 	# will change/use the anim_checker booleans to determine if the
 	# left door is going to play the open/close anims once
