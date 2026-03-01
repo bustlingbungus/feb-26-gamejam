@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcrljqnflie56"]
 
-[ext_resource type="Script" uid="uid://1i0g6p51iqmt" path="res://Micro Games/micro_tinder.gd" id="1_2ibkr"]
+[ext_resource type="Script" uid="uid://1i0g6p51iqmt" path="res://Scripts/micro_tinder.gd" id="1_2ibkr"]
 [ext_resource type="Texture2D" uid="uid://cr77xwigd3rie" path="res://Assets/Art/Tinder/phone_01.png" id="2_xisd0"]
 [ext_resource type="Texture2D" uid="uid://crflolf52e4og" path="res://Assets/Art/Tinder/dog_02.png" id="3_xisd0"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="4_yqxnw"]

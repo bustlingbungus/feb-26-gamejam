@@ -68,7 +68,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			heart.visible = true
 			#animation_player.stop()
 			heart_player.play("heart")
-			music_manager.load_sound("res://Assets/Sounds/SnapShot/let_her_go.mp3")
+			music_manager.load_sound("res://Assets/Sounds/SnapShot/careless_whispers.mp3")
 			music_manager.start()
 		
 		else: 
