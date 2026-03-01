@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://ddnudxwrnwqj"]
+
+[ext_resource type="Script" uid="uid://c2hbmbsxxwp1i" path="res://Micro Games/door_manager.gd" id="1_i3lo6"]
+[ext_resource type="Texture2D" uid="uid://b487qd32cif3x" path="res://icon.svg" id="2_q0uv4"]
+[ext_resource type="Texture2D" uid="uid://djr3rjnjuytq3" path="res://Assets/Art/FNAF/Left_Door_Placeholder.png" id="3_lhksp"]
+[ext_resource type="Script" uid="uid://svnt50su7d6h" path="res://Micro Games/left_door.gd" id="4_d2m5h"]
+[ext_resource type="Texture2D" uid="uid://vobadiiydala" path="res://Assets/Art/FNAF/Front_Door_Placeholder.png" id="5_ptwqx"]
+[ext_resource type="Texture2D" uid="uid://c6jwdncvnloic" path="res://Assets/Art/FNAF/Right_Door_Placeholder.png" id="6_3mnsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0uv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26pux"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_noglh"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_iv18s"]
+
+[node name="Mama_Node" type="Node2D" unique_id=79326296]
+
+[node name="Animatronic_Timer" type="Node2D" parent="." unique_id=975275562]
+
+[node name="Camera_Manager" type="Node2D" parent="." unique_id=914780569]
+
+[node name="cam_1" type="Area2D" parent="Camera_Manager" unique_id=1261301208]
+
+[node name="cam_1_collide" type="CollisionShape2D" parent="Camera_Manager/cam_1" unique_id=1786896628]
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_1_sprite" type="Sprite2D" parent="Camera_Manager/cam_1" unique_id=1957612183]
+
+[node name="cam_2" type="Area2D" parent="Camera_Manager" unique_id=1362410737]
+
+[node name="cam_2_collide" type="CollisionShape2D" parent="Camera_Manager/cam_2" unique_id=779210282]
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_2_sprite" type="Sprite2D" parent="Camera_Manager/cam_2" unique_id=839065448]
+
+[node name="cam_3" type="Area2D" parent="Camera_Manager" unique_id=527967131]
+
+[node name="cam_3_collide" type="CollisionShape2D" parent="Camera_Manager/cam_3" unique_id=1010623225]
+shape = SubResource("RectangleShape2D_q0uv4")
+
+[node name="cam_3_sprite" type="Sprite2D" parent="Camera_Manager/cam_3" unique_id=970756664]
+
+[node name="Door_Manager" type="Node2D" parent="." unique_id=2026689661]
+script = ExtResource("1_i3lo6")
+
+[node name="left_button" type="Area2D" parent="Door_Manager" unique_id=1706703107]
+position = Vector2(-518, 0)
+metadata/_edit_group_ = true
+
+[node name="left_door_collide" type="CollisionShape2D" parent="Door_Manager/left_button" unique_id=2022035413]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_26pux")
+
+[node name="left_door_sprite" type="Sprite2D" parent="Door_Manager/left_button" unique_id=803104149]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_q0uv4")
+
+[node name="front_button" type="Area2D" parent="Door_Manager" unique_id=783040120]
+position = Vector2(0, -275)
+metadata/_edit_group_ = true
+
+[node name="front_door_collide" type="CollisionShape2D" parent="Door_Manager/front_button" unique_id=1930374639]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_26pux")
+
+[node name="front_door_sprite" type="Sprite2D" parent="Door_Manager/front_button" unique_id=30521072]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_q0uv4")
+
+[node name="right_button" type="Area2D" parent="Door_Manager" unique_id=851111589]
+position = Vector2(520, 0)
+metadata/_edit_group_ = true
+
+[node name="right_door_collide" type="CollisionShape2D" parent="Door_Manager/right_button" unique_id=2100789472]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_26pux")
+
+[node name="right_door_sprite" type="Sprite2D" parent="Door_Manager/right_button" unique_id=1860413817]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_q0uv4")
+
+[node name="left_door" type="Sprite2D" parent="Door_Manager" unique_id=1710929274]
+show_behind_parent = true
+position = Vector2(-375, -100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lhksp")
+script = ExtResource("4_d2m5h")
+
+[node name="front_door" type="Sprite2D" parent="Door_Manager" unique_id=56643104]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_ptwqx")
+
+[node name="right_door" type="Sprite2D" parent="Door_Manager" unique_id=224845731]
+show_behind_parent = true
+position = Vector2(375.5, -100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_3mnsv")
+
+[node name="bg_darkness_layer" type="Sprite2D" parent="." unique_id=226952187]
+position = Vector2(-584, -330)
+scale = Vector2(1165.0001, 660)
+texture = SubResource("ImageTexture_noglh")
+
+[node name="bg_office_layer" type="Sprite2D" parent="." unique_id=1591945168]
+position = Vector2(-583, -329)
+scale = Vector2(1162, 657.00006)
+texture = SubResource("ImageTexture_iv18s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=192185386]
+
+[connection signal="mouse_entered" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_entered"]
+[connection signal="mouse_exited" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_exited"]
+[connection signal="mouse_entered" from="Door_Manager/front_button" to="Door_Manager" method="_on_front_button_mouse_entered"]
+[connection signal="mouse_exited" from="Door_Manager/front_button" to="Door_Manager" method="_on_front_button_mouse_exited"]
+[connection signal="mouse_entered" from="Door_Manager/right_button" to="Door_Manager" method="_on_right_button_mouse_entered"]
+[connection signal="mouse_exited" from="Door_Manager/right_button" to="Door_Manager" method="_on_right_button_mouse_exited"]

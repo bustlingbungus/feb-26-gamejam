@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = -1200
+@export var speed = -1500;
 
 var timeout = false
 var caught
