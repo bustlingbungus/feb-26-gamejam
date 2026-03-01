@@ -1,12 +1,12 @@
 extends Node2D
 
+@export var missedAlpha : float = 0.25
+
 
 var targetPos : Vector2 = Vector2.ZERO
 var vel : Vector2 = Vector2.ZERO
 var satisfyAction : String = "None"
 var direction : Glob.ArrowDir
-
-# amount of time (in seconds) the arrow will take to reach it's target 
 var speed : float
 
 # Called when the node enters the scene tree for the first time.
@@ -54,3 +54,8 @@ func PassedTarget() -> bool:
 	
 func Destroy() -> void:
 	queue_free()
+	
+func SetMissed() -> void:
+	var sprite : Sprite2D = get_child(0)
+	sprite.modulate.a = missedAlpha
+	

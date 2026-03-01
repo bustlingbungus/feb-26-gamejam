@@ -1,6 +1,7 @@
 extends Node
 
 @export var ArrowSpawner : Node
+@export var Gamemode : Node
 @export var fnfgirl : Node2D
 @export var fnfboy : Node2D
 
@@ -14,6 +15,8 @@ extends Node
 @export var SpeedScaling : float = 1
 @export var CountScaling : float = 1
 @export var TurnScaling : float = 1
+
+var gameOver = false
 
 var activePlayer : Node2D
 var spawn_scale : float = 1
@@ -55,6 +58,7 @@ func SwitchSides() -> void:
 	if activePlayer == fnfgirl:
 		activePlayer = fnfboy
 	else:
+		Gamemode.NewRound()
 		activePlayer = fnfgirl
 		req_directions.clear()
 		turn_scale += TurnScaling / 10.0
@@ -79,7 +83,7 @@ func SpawnArrows() -> void:
 		cnt = randi_range(int(ArrowCountRange.x * cnt_scale), int(ArrowCountRange.y * cnt_scale))
 	else:	
 		cnt = req_directions.size()
-	ArrowSpawner.SpawnArrows(activePlayer.position, cnt, SpawnSpeed / spawn_scale, ArrowSpeed * speed_scale)
+	ArrowSpawner.SpawnArrows(activePlayer.position, cnt, 1.0 / (SpawnSpeed * spawn_scale), ArrowSpeed * speed_scale)
 
 
 func AcceptingDirections() -> bool:
@@ -105,23 +109,31 @@ func HandleTopArrow() -> void:
 func HandlePlayerInput() -> void:
 	var top_arrow = player_arrows[0]
 	if top_arrow.ArrowComplete():
-		print("correct!")
 		top_arrow.Destroy()
 		player_arrows.pop_front()
-	elif DirectionalInput():
-		print("missed")
-		fnfboy.StartSpinning()
+		Gamemode.ArrowHit(top_arrow)
+	elif DirectionalInput() || top_arrow.PassedTarget():
+		top_arrow.SetMissed()
 		player_arrows.pop_front()
-	elif top_arrow.PassedTarget():
-		print("missed")
-		player_arrows.pop_front()
+		Gamemode.ArrowMiss(top_arrow)
 		
 		
 func HandleGirlArrow() -> void:
 	var top_arrow = player_arrows[0]
 	if top_arrow.PassedTarget():
+		top_arrow.SetMissed()
 		fnfgirl.ReactToArrow(top_arrow)
 		player_arrows.pop_front()
 		
 func DirectionalInput() -> bool:
 	return Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_left") || Input.is_action_just_pressed("ui_right")
+
+
+func EndGame():
+	gameOver = true
+	turn_switch_timer = 1e99 # effectively cancel new turns
+	# clear all existing arrows
+	req_directions.clear()
+	for arrow in player_arrows:
+		arrow.Destroy()
+	player_arrows.clear()

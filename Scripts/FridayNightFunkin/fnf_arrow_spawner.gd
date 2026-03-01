@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 		push_error("couldn't find arrow manager!")
 		return 
 		
+	if arrowManager.gameOver:
+		spawn_cnt = 0
+		
 	if spawn_cnt > 0:
 		if timer <= 0:
 			SpawnArrow(spawn_target, arrow_speed)

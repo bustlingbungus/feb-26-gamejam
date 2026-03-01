@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bf5w1syckrlsx"]
 
+[ext_resource type="Script" uid="uid://braswgjms4lnc" path="res://Scripts/FridayNightFunkin/fnf_gamemode.gd" id="1_1cx2k"]
 [ext_resource type="Script" uid="uid://c7u0igllbt4nk" path="res://Scripts/FridayNightFunkin/fnf_arrow_spawner.gd" id="2_dj1b5"]
 [ext_resource type="PackedScene" uid="uid://cylavxm8n8pyu" path="res://Objects/fnf_arrow.tscn" id="3_dj1b5"]
 [ext_resource type="Script" uid="uid://ugxb85fj2bl7" path="res://Scripts/FridayNightFunkin/fnfboy.gd" id="4_javse"]
@@ -7,31 +8,52 @@
 [ext_resource type="Script" uid="uid://wowlqa224b6q" path="res://Scripts/FridayNightFunkin/fnf_arrow_manager.gd" id="4_t7bki"]
 [ext_resource type="Script" uid="uid://bcmosgn30nrq7" path="res://Scripts/FridayNightFunkin/fnfgirl.gd" id="5_javse"]
 [ext_resource type="Texture2D" uid="uid://rngb766sm0gj" path="res://Assets/Art/FridayNightFunkin/fnfgirl_spritesheet.png" id="5_ssiec"]
+[ext_resource type="AudioStream" uid="uid://dtn8dijkvbrjb" path="res://Assets/Sounds/FridayNightFunkin/oiia-short.mp3" id="6_3ndj2"]
 [ext_resource type="Texture2D" uid="uid://je7x37u2s7xh" path="res://Assets/Art/FridayNightFunkin/oiia-cat-31628698611-ezgif.com-gif-to-sprite-converter.png" id="6_uef0i"]
+[ext_resource type="AudioStream" uid="uid://comdtlm1d8ym6" path="res://Assets/Sounds/FridayNightFunkin/oo.mp3" id="9_jsn67"]
+[ext_resource type="AudioStream" uid="uid://dx6gwa223mrgw" path="res://Assets/Sounds/FridayNightFunkin/e.mp3" id="10_mcel8"]
+[ext_resource type="AudioStream" uid="uid://crwemcjbjjjkf" path="res://Assets/Sounds/FridayNightFunkin/a.mp3" id="11_cjxoe"]
+[ext_resource type="AudioStream" uid="uid://dt4gtccvr7xl2" path="res://Assets/Sounds/FridayNightFunkin/updog.mp3" id="11_rssfr"]
+[ext_resource type="AudioStream" uid="uid://b5848qcyqgg6v" path="res://Assets/Sounds/FridayNightFunkin/i.mp3" id="12_8tvkb"]
+[ext_resource type="AudioStream" uid="uid://5um0vxwvalkg" path="res://Assets/Sounds/FridayNightFunkin/downdog.mp3" id="12_a6rf1"]
+[ext_resource type="AudioStream" uid="uid://ix1mmd2yw7df" path="res://Assets/Sounds/FridayNightFunkin/leftdog.mp3" id="13_0a5j3"]
+[ext_resource type="AudioStream" uid="uid://dqhucdu8rn3wb" path="res://Assets/Sounds/FridayNightFunkin/rightdog.mp3" id="14_m3avg"]
 
 [node name="FridayNightFunkin" type="Node2D" unique_id=1417410151]
+
+[node name="Gamemode" type="Node" parent="." unique_id=2085094470 node_paths=PackedStringArray("oiiai", "ArrowManager")]
+script = ExtResource("1_1cx2k")
+oiiai = NodePath("../fnfboy")
+ArrowManager = NodePath("../ArrowManager")
 
 [node name="ArrowSpawner" type="Node" parent="." unique_id=1285187881 node_paths=PackedStringArray("arrowManager")]
 script = ExtResource("2_dj1b5")
 arrow_scene = ExtResource("3_dj1b5")
 arrowManager = NodePath("../ArrowManager")
 
-[node name="ArrowManager" type="Node" parent="." unique_id=938459044 node_paths=PackedStringArray("ArrowSpawner", "fnfgirl", "fnfboy")]
+[node name="ArrowManager" type="Node" parent="." unique_id=938459044 node_paths=PackedStringArray("ArrowSpawner", "Gamemode", "fnfgirl", "fnfboy")]
 script = ExtResource("4_t7bki")
 ArrowSpawner = NodePath("../ArrowSpawner")
+Gamemode = NodePath("../Gamemode")
 fnfgirl = NodePath("../fnfgirl")
 fnfboy = NodePath("../fnfboy")
 TimeBetweenTurns = 2.0
-ArrowSpeed = 300.0
-ArrowCountRange = Vector2i(3, 5)
+SpawnSpeed = 2.0
+ArrowSpeed = 500.0
+ArrowCountRange = Vector2i(4, 6)
 SpawnScaling = 1.8
 CountScaling = 0.7
 TurnScaling = 0.7
 
-[node name="fnfboy" type="Node2D" parent="." unique_id=1871352549]
+[node name="fnfboy" type="Node2D" parent="." unique_id=1871352549 node_paths=PackedStringArray("oiiaiSound", "osound", "esound", "asound", "isound")]
 position = Vector2(200, 500)
 script = ExtResource("4_javse")
 SpinningSpeed = 0.05
+oiiaiSound = NodePath("oiiaiSoundEffect")
+osound = NodePath("o")
+esound = NodePath("e")
+asound = NodePath("a")
+isound = NodePath("i")
 
 [node name="GameplaySprites" type="Sprite2D" parent="fnfboy" unique_id=1260958070]
 scale = Vector2(1.08, 1.08)
@@ -44,14 +66,45 @@ visible = false
 texture = ExtResource("6_uef0i")
 hframes = 52
 
-[node name="fnfgirl" type="Node2D" parent="." unique_id=1184917305]
+[node name="oiiaiSoundEffect" type="AudioStreamPlayer" parent="fnfboy" unique_id=667626740]
+stream = ExtResource("6_3ndj2")
+
+[node name="o" type="AudioStreamPlayer" parent="fnfboy" unique_id=1807005079]
+stream = ExtResource("9_jsn67")
+
+[node name="e" type="AudioStreamPlayer" parent="fnfboy" unique_id=121407442]
+stream = ExtResource("10_mcel8")
+
+[node name="a" type="AudioStreamPlayer" parent="fnfboy" unique_id=373577906]
+stream = ExtResource("11_cjxoe")
+
+[node name="i" type="AudioStreamPlayer" parent="fnfboy" unique_id=1394202540]
+stream = ExtResource("12_8tvkb")
+
+[node name="fnfgirl" type="Node2D" parent="." unique_id=1184917305 node_paths=PackedStringArray("upsound", "downsound", "leftsound", "rightsound")]
 position = Vector2(980, 500)
 scale = Vector2(0.625, 0.625)
 script = ExtResource("5_javse")
 IdlePoseTime = 0.75
+upsound = NodePath("updog")
+downsound = NodePath("downdog")
+leftsound = NodePath("leftdog")
+rightsound = NodePath("rightdog")
 
 [node name="Sprite2D" type="Sprite2D" parent="fnfgirl" unique_id=1014233167]
 scale = Vector2(0.395, 0.395)
 texture = ExtResource("5_ssiec")
 hframes = 6
 frame = 5
+
+[node name="updog" type="AudioStreamPlayer" parent="fnfgirl" unique_id=1822249058]
+stream = ExtResource("11_rssfr")
+
+[node name="downdog" type="AudioStreamPlayer" parent="fnfgirl" unique_id=71481642]
+stream = ExtResource("12_a6rf1")
+
+[node name="leftdog" type="AudioStreamPlayer" parent="fnfgirl" unique_id=1315509417]
+stream = ExtResource("13_0a5j3")
+
+[node name="rightdog" type="AudioStreamPlayer" parent="fnfgirl" unique_id=1911728744]
+stream = ExtResource("14_m3avg")

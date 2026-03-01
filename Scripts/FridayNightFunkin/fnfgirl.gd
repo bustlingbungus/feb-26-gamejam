@@ -3,6 +3,11 @@ extends Node2D
 @export var TransitionTime : float = 1.0
 @export var IdlePoseTime : float = 0.5
 
+@export var upsound : AudioStreamPlayer
+@export var downsound : AudioStreamPlayer
+@export var leftsound : AudioStreamPlayer
+@export var rightsound : AudioStreamPlayer
+
 var in_idle : bool = true
 var transition_timer : float = 0.0
 var idle_timer : float = 0.0
@@ -32,6 +37,8 @@ func _process(delta: float) -> void:
 
 func ReactToArrow(arrow : Node2D) -> void:
 	var frame = DirectionToFrame(arrow.direction)
+	var sound = DirectionToSoundEffect(arrow.direction)
+	sound.play()
 	sprite.frame = frame
 	in_idle = false
 	transition_timer = TransitionTime
@@ -42,6 +49,19 @@ func SwitchIdlePoses() -> void:
 		sprite.frame = 2
 	else:
 		sprite.frame = 1
+		
+func DirectionToSoundEffect(dir : Glob.ArrowDir) -> AudioStreamPlayer:
+	match dir:
+		Glob.ArrowDir.UP:
+			return upsound
+		Glob.ArrowDir.DOWN:
+			return downsound
+		Glob.ArrowDir.LEFT:
+			return leftsound
+		Glob.ArrowDir.RIGHT:
+			return rightsound
+	return null
+
 
 
 # 0 = down
