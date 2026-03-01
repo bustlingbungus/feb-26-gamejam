@@ -110,6 +110,7 @@ func HandlePlayerInput() -> void:
 		player_arrows.pop_front()
 	elif DirectionalInput():
 		print("missed")
+		fnfboy.StartSpinning()
 		player_arrows.pop_front()
 	elif top_arrow.PassedTarget():
 		print("missed")

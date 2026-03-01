@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c7u0igllbt4nk" path="res://Scripts/FridayNightFunkin/fnf_arrow_spawner.gd" id="2_dj1b5"]
 [ext_resource type="PackedScene" uid="uid://cylavxm8n8pyu" path="res://Objects/fnf_arrow.tscn" id="3_dj1b5"]
+[ext_resource type="Script" uid="uid://ugxb85fj2bl7" path="res://Scripts/FridayNightFunkin/fnfboy.gd" id="4_javse"]
+[ext_resource type="Texture2D" uid="uid://h50l34ygek2" path="res://Assets/Art/FridayNightFunkin/oiiai_spritesheet.png" id="4_ssiec"]
 [ext_resource type="Script" uid="uid://wowlqa224b6q" path="res://Scripts/FridayNightFunkin/fnf_arrow_manager.gd" id="4_t7bki"]
-[ext_resource type="Texture2D" uid="uid://dawg5ulh15jeb" path="res://Assets/Art/FridayNightFunkin/fnfboy.png" id="5_c8ym5"]
 [ext_resource type="Script" uid="uid://bcmosgn30nrq7" path="res://Scripts/FridayNightFunkin/fnfgirl.gd" id="5_javse"]
 [ext_resource type="Texture2D" uid="uid://rngb766sm0gj" path="res://Assets/Art/FridayNightFunkin/fnfgirl_spritesheet.png" id="5_ssiec"]
+[ext_resource type="Texture2D" uid="uid://je7x37u2s7xh" path="res://Assets/Art/FridayNightFunkin/oiia-cat-31628698611-ezgif.com-gif-to-sprite-converter.png" id="6_uef0i"]
 
 [node name="FridayNightFunkin" type="Node2D" unique_id=1417410151]
 
@@ -28,10 +30,19 @@ TurnScaling = 0.7
 
 [node name="fnfboy" type="Node2D" parent="." unique_id=1871352549]
 position = Vector2(200, 500)
+script = ExtResource("4_javse")
+SpinningSpeed = 0.05
 
-[node name="Sprite2D" type="Sprite2D" parent="fnfboy" unique_id=1260958070]
-scale = Vector2(0.265, 0.265)
-texture = ExtResource("5_c8ym5")
+[node name="GameplaySprites" type="Sprite2D" parent="fnfboy" unique_id=1260958070]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("4_ssiec")
+hframes = 5
+frame = 1
+
+[node name="SpinningSprites" type="Sprite2D" parent="fnfboy" unique_id=1321959969]
+visible = false
+texture = ExtResource("6_uef0i")
+hframes = 52
 
 [node name="fnfgirl" type="Node2D" parent="." unique_id=1184917305]
 position = Vector2(980, 500)
