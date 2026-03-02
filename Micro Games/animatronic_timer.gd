@@ -5,6 +5,7 @@ extends Node2D
 @onready var jumpscare_anim: AnimationPlayer = $jumpscare_sprite/jumpscare_anim
 @onready var door_manager: Node2D = $"../Door_Manager"
 @onready var victory_anim: AnimationPlayer = $victory_mark/victory_anim
+@onready var micro_swticher: Node2D = $"../Micro-Swticher"
 
 var failstate = false
 var winstate = false
@@ -33,4 +34,5 @@ func _on_animatronic_timer_timeout() -> void:
 		failstate = true
 	
 	if failstate == true:
+		Global.lose_lives()
 		jumpscare_anim.play("jumpscare")

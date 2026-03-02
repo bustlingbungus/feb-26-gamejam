@@ -40,24 +40,29 @@ func micro_selection_assosiation():
 			label.text = "- Left and Right Arrow Keys -"
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
 			label2.text = "Attracted to the US postal service."
-		2:
-			controls.text = "Ruffus Says"
+		2: # quick draw
+			controls.text = "Quickdraw"
 			label.text = "- w + a + s + d / left-right-up-down keys -"
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
 			label2.text = "Parappa would be proud."
-		3:
+		3: # platformer
 			controls.text = "Fetch"
 			label.text = "- w + a + s + d + space -"
 			sprite_2d.texture = load("res://Assets/Art/Platformer/dog pxiel.png")
-			label2.text = "Attracted to the US postal service."
-		4:
+			label2.text = "he jump doe."
+		4: # tug
 			controls.text = "Tug of War"
 			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
-			label2.text = "Attracted to the US postal service."
+			label2.text = "Tug."
 		5: # fnf
 			controls.text = "Simon Says"
 			label.text = "- WASD / Arrow keys -"
 			sprite_2d.texture = load("res://Assets/Art/FridayNightFunkin/oiiai_idle.png")
 			sprite_2d.scale = Vector2(1.0, 1.0)
 			label2.text = "Do what hte dog doin'"
+		6: #fnaf
+			controls.text = "Watchdog"
+			label.text = "- Mouse -"
+			#sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
+			label2.text = "Spooookyy."

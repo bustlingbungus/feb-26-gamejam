@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ddnudxwrnwqj"]
 
+[ext_resource type="Script" uid="uid://cki86lwrqpf3v" path="res://Micro Games/micro_fnaf.gd" id="1_a64di"]
 [ext_resource type="Script" uid="uid://cj18g4y1b363v" path="res://Micro Games/animatronic_timer.gd" id="1_d2m5h"]
 [ext_resource type="Script" uid="uid://c2hbmbsxxwp1i" path="res://Micro Games/door_manager.gd" id="1_i3lo6"]
 [ext_resource type="Texture2D" uid="uid://dy7nghdrjwd2c" path="res://Assets/Art/FNAF/office_bg_complete.png" id="1_ptwqx"]
@@ -21,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dkm54vslglhni" path="res://Assets/Art/FNAF/Cameras/Camera3.png" id="9_wqyt7"]
 [ext_resource type="Texture2D" uid="uid://dh13njdsg7ggl" path="res://Assets/Art/FNAF/Cameras/Camera3_bad.png" id="10_4s8by"]
 [ext_resource type="Texture2D" uid="uid://b47uqbgares4t" path="res://Assets/Art/FNAF/victory.png" id="21_8hmd3"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="22_sc275"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="23_a64di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26pux"]
 size = Vector2(28.000006, 18.666668)
@@ -245,6 +248,7 @@ _data = {
 }
 
 [node name="Mama_Node" type="Node2D" unique_id=79326296]
+script = ExtResource("1_a64di")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=192185386]
 
@@ -442,6 +446,15 @@ texture = ExtResource("21_8hmd3")
 
 [node name="victory_anim" type="AnimationPlayer" parent="Animatronic_Threat/victory_mark" unique_id=1325806491]
 libraries/ = SubResource("AnimationLibrary_s5tdn")
+
+[node name="UI" parent="." unique_id=1078211157 instance=ExtResource("22_sc275")]
+offset_left = -579.0
+offset_top = -331.0
+offset_right = 573.0
+offset_bottom = -331.0
+
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("23_a64di")]
+position = Vector2(-579, -317)
 
 [connection signal="mouse_entered" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_entered"]
 [connection signal="mouse_exited" from="Door_Manager/left_button" to="Door_Manager" method="_on_left_button_mouse_exited"]

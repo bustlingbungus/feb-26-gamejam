@@ -1,6 +1,8 @@
 extends Node2D
 @onready var area_2d: Area2D = $Area2D
 @onready var music_manager: Node = $"../MusicManager"
+@onready var micro_swticher: Node2D = $"../Micro-Swticher"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,4 +22,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#increment points
 	music_manager.load_sound("res://Assets/Sounds/SnapShot/twitch-follower-alert-sound.mp3")
 	music_manager.start()
+	micro_swticher.play_anim()
 	queue_free()
+	

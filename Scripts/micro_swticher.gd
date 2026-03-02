@@ -37,14 +37,13 @@ func intermission_switch():
 	while x == Global.last_microgame:
 		x = rng.randi_range(0, Games.size() - 1)
 		
-	if counter >= 3:
-		match ignore:
-			0:
-				pass
 	# Swithces scenes
 	Global.next_microgame = x
-	Global.last_microgame = 0
-	get_tree().change_scene_to_file(dogshow)
+	Global.last_microgame = x
+	if Global.lives <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	else:
+		get_tree().change_scene_to_file(dogshow)
 	
 
 

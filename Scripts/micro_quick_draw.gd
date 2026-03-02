@@ -11,7 +11,7 @@ extends Node2D
 @onready var enemy: Sprite2D = $Enemy/Sprite2D
 @onready var player_arm: Sprite2D = $Player/Arm
 @onready var enemy_arm: Sprite2D = $Enemy/Arm
-
+@onready var label: Label = $DRAW
 
 var input_active = false
 var lose_condition = false
@@ -76,6 +76,7 @@ func ending():
 	micro_swticher.play_anim()
 
 func _on_duel_timeout() -> void:
+	label.text = "- SHOOT -"
 	input_active = true
 	duel_anim_player.play("alt")
 	duel_decider.start()

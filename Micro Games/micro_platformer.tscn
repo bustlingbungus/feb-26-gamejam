@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dhjehjajq3dfc"]
 
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="1_2g380"]
+[ext_resource type="Script" uid="uid://c23wver7mjxqx" path="res://Micro Games/micro_platformer.gd" id="1_4jah0"]
 [ext_resource type="Texture2D" uid="uid://bf5xhw7y4o6go" path="res://Assets/Art/Platformer/cloudsbackground.png" id="1_qx3jg"]
 [ext_resource type="Texture2D" uid="uid://b487qd32cif3x" path="res://icon.svg" id="1_vpo6y"]
 [ext_resource type="Script" uid="uid://do88ug8h5s0qm" path="res://Scripts/player.gd" id="2_gb4at"]
@@ -8,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c7s026pon67wq" path="res://Assets/Art/Platformer/platformtilemap.png" id="4_gb4at"]
 [ext_resource type="Texture2D" uid="uid://m37tk8ce4vga" path="res://Assets/Art/Platformer/New Piskel (5).png" id="6_pbn5e"]
 [ext_resource type="Script" uid="uid://bkk3tb82303ib" path="res://Assets/Art/Platformer/bone.gd" id="6_prxc4"]
+[ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="10_r38yo"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="11_yyf2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbn5e"]
 size = Vector2(123, 121)
@@ -279,6 +282,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g380"]
 
 [node name="MicroPlatformer" type="Node2D" unique_id=697229473]
+script = ExtResource("1_4jah0")
 
 [node name="MusicManager" parent="." unique_id=767795503 instance=ExtResource("1_2g380")]
 
@@ -365,4 +369,23 @@ libraries/ = SubResource("AnimationLibrary_2g380")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bone/Area2D" unique_id=279878792]
 shape = SubResource("RectangleShape2D_2g380")
 
+[node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("10_r38yo")]
+
+[node name="UI" parent="." unique_id=1078211157 instance=ExtResource("11_yyf2s")]
+offset_bottom = 0.0
+
+[node name="Timer" type="Timer" parent="." unique_id=2128870322]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1385582473]
+modulate = Color(0, 0, 0, 1)
+offset_left = 563.0
+offset_top = 25.0
+offset_right = 603.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+
 [connection signal="area_entered" from="bone/Area2D" to="bone" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -56,6 +56,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if image_value == 0:
 			x.visible = true
 			heart_player.play("x")
+			Global.lose_lives()
 		animation_player.play("fade_left")
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/cut_explosion.mp3") 
 		sound_manager.start()#test
