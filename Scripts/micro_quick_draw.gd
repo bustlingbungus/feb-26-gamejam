@@ -58,6 +58,7 @@ func early_lose_condition():
 	Global.lose_lives()
 	enemy.position = Vector2(357, 530)
 	enemy.texture = load("res://Assets/Art/WesternDOG/WesternDOG_EnemyDogDEAD.png")
+
 	ending()
 
 

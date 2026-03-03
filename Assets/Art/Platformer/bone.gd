@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("here")
 	#increment points
+	Global.add_score()
 	music_manager.load_sound("res://Assets/Sounds/SnapShot/twitch-follower-alert-sound.mp3")
 	music_manager.start()
 	micro_swticher.play_anim()

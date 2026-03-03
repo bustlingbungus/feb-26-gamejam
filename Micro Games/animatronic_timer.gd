@@ -30,6 +30,7 @@ func _on_animatronic_timer_timeout() -> void:
 	if threat_value == door_manager.door_closed:
 		winstate = true;
 		victory_anim.play("jumpscare")
+		Global.add_score()
 	else:
 		failstate = true
 	

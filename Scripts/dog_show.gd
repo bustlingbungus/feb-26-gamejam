@@ -6,11 +6,16 @@ extends Node2D
 @onready var micro_swticher: Node2D = $"Micro-Swticher"
 @onready var label2: Label = $InfoDisplay/Label2
 @onready var controls: Label = $InfoDisplay/Controls
+@onready var audio_manager: Node = $AudioManager
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	micro_selection_assosiation()
+	audio_manager.load_sound("res://Assets/Sounds/SnapShot/betweenframe.mp3")
+	audio_manager.start()
+	#play transition music
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +37,7 @@ func micro_selection_assosiation():
 	match Global.next_microgame:
 		0: # photo taker
 			controls.text = "PhotoBark"
-			label.text = "- SpaceBar -"
+			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/Dog Elite Concept Art.png")
 			label2.text = "When the dog doin?"
 		1: # dog tinder
@@ -42,12 +47,12 @@ func micro_selection_assosiation():
 			label2.text = "Attracted to the US postal service."
 		2: # quick draw
 			controls.text = "Quickdraw"
-			label.text = "- w + a + s + d / left-right-up-down keys -"
+			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
 			label2.text = "Parappa would be proud."
 		3: # platformer
 			controls.text = "Fetch"
-			label.text = "- w + a + s + d + space -"
+			label.text = "- WASD / Arrow Keys + Space -"
 			sprite_2d.texture = load("res://Assets/Art/Platformer/dog pxiel.png")
 			label2.text = "he jump doe."
 		4: # tug
