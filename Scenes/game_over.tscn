@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://k2rdvi37rkne" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0007.png" id="22_7kjyf"]
 [ext_resource type="Texture2D" uid="uid://dvbyvyxnontod" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0008.png" id="23_tnodr"]
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="25_hkb6a"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="26_hkb6a"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="26_vdx2e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkb6a"]
@@ -166,6 +167,9 @@ sprite_frames = SubResource("SpriteFrames_xuarc")
 autoplay = "default"
 
 [node name="AudioManager" parent="." unique_id=767795503 instance=ExtResource("25_hkb6a")]
+
+[node name="UI" parent="." unique_id=1078211157 instance=ExtResource("26_hkb6a")]
+layout_mode = 0
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("26_vdx2e")]
 

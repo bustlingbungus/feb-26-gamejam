@@ -47,7 +47,7 @@ func intermission_switch():
 	#Global.last_microgame = x
 	if Global.lives == 0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
-	elif Global.score >= 1:
+	elif Global.score >= 15:
 		get_tree().change_scene_to_file("res://Scenes/Winner.tscn")
 	else:
 		get_tree().change_scene_to_file(dogshow)

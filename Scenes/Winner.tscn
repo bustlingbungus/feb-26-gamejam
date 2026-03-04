@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dvbyvyxnontod" path="res://Assets/Art/DogShow/PressSpace-startText/flashes0008.png" id="24_myfsd"]
 [ext_resource type="PackedScene" uid="uid://1kf8khasw2wj" path="res://Objects/sound_manager.tscn" id="25_jgvh6"]
 [ext_resource type="PackedScene" uid="uid://cclscjnofjfq2" path="res://Objects/micro_swticher.tscn" id="26_es1ok"]
+[ext_resource type="PackedScene" uid="uid://d2h480c4crevb" path="res://Globals/UI.tscn" id="27_p1pvf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkb6a"]
 animations = [{
@@ -160,6 +161,16 @@ offset_right = 958.0
 offset_bottom = 379.0
 color = Color(0, 0, 0, 0.6313726)
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=917867594]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 238.0
+offset_right = 753.0
+offset_bottom = 330.0
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave][rainbow]You win![/wave]"
+
 [node name="Text" type="AnimatedSprite2D" parent="." unique_id=543343898]
 visible = false
 position = Vector2(570.50006, 271.50003)
@@ -178,19 +189,12 @@ autoplay = "default"
 
 [node name="AudioManager" parent="." unique_id=767795503 instance=ExtResource("25_jgvh6")]
 
+[node name="UI" parent="." unique_id=1078211157 instance=ExtResource("27_p1pvf")]
+layout_mode = 0
+
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("26_es1ok")]
 
 [node name="Timer" type="Timer" parent="." unique_id=702576346]
 wait_time = 4.0
 one_shot = true
 autostart = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=917867594]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 238.0
-offset_right = 753.0
-offset_bottom = 330.0
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[wave][rainbow]You win![/wave]"
