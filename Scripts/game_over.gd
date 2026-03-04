@@ -13,4 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		Global.lives += 3
-		micro_swticher.intermission_switch()
+		Global.score = 0
+		micro_swticher.play_anim()
+		#micro_swticher.intermission_switch()

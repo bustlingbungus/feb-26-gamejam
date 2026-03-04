@@ -29,6 +29,7 @@
 script = ExtResource("1_1cx2k")
 oiiai = NodePath("fnfboy")
 ArrowManager = NodePath("ArrowManager")
+winRound = 3
 ApplauseSound = NodePath("ApplauseSound")
 bkgMusic = NodePath("Music")
 EndOfGameTime = 4.0

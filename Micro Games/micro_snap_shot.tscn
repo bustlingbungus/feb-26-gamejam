@@ -256,7 +256,13 @@ offset_bottom = 103.0
 
 [node name="Micro-Swticher" parent="." unique_id=1138590153 instance=ExtResource("7_epit8")]
 
+[node name="Overload" type="Timer" parent="." unique_id=885608792]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="Activator" to="." method="_on_activator_timeout"]
 [connection signal="timeout" from="Timer" to="Dog" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Camera/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="CameraFlash/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Overload" to="." method="_on_overload_timeout"]

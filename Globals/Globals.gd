@@ -16,15 +16,18 @@ var last_microgame = 1
 var score = 0
 var lives = 3
 var game_end = false
+var games_shuffle = []
+var allow_shuffle = true
+var games_shuffle_indices = 0
 
 func add_score():
 	score += 1
-	
 
 func lose_lives():
 	lives -= 1
 	if lives == 0:
-		game_end = true
+		pass
+
 
 
 func game_over():

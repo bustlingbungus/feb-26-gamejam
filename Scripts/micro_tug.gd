@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.75).timeout
 		is_started = true
 	pass
-	print(is_started)
+	#print(is_started)
 
 func _unhandled_input(event: InputEvent) -> void:
 

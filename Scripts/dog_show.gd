@@ -34,12 +34,12 @@ func _on_curtain_close_animation_finished() -> void:
 		micro_swticher.game_over_switch()
 
 func micro_selection_assosiation():
-	match Global.next_microgame:
+	match Global.games_shuffle[Global.games_shuffle_indices]:
 		0: # photo taker
 			controls.text = "PhotoBark"
 			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/Dog Elite Concept Art.png")
-			label2.text = "When the dog doin?"
+			label2.text = "Capture the dog in the frame"
 		1: # dog tinder
 			controls.text = "Ruff Dating Life"
 			label.text = "- Left and Right Arrow Keys -"
@@ -49,7 +49,7 @@ func micro_selection_assosiation():
 			controls.text = "Quickdraw"
 			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/Tinder/dog_04.png")
-			label2.text = "Parappa would be proud."
+			label2.text = "Wait for the time to strike."
 		3: # platformer
 			controls.text = "Fetch"
 			label.text = "- WASD / Arrow Keys + Space -"
@@ -59,7 +59,7 @@ func micro_selection_assosiation():
 			controls.text = "Tug of War"
 			label.text = "- Space -"
 			sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
-			label2.text = "Tug."
+			label2.text = "Mash as fast as you can."
 		5: # fnf
 			controls.text = "Simon Says"
 			label.text = "- WASD / Arrow keys -"
@@ -70,4 +70,4 @@ func micro_selection_assosiation():
 			controls.text = "Watchdog"
 			label.text = "- Mouse -"
 			#sprite_2d.texture = load("res://Assets/Art/tug_of_war/AllElementsTogether_TugofWar.png")
-			label2.text = "Spooookyy."
+			label2.text = "Check the cameras at the bottom and close the right door."

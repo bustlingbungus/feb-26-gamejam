@@ -10,11 +10,11 @@ extends Node
 @export var TimeBetweenTurns : float = 1.0
 @export var GameStartTime : float = 3.0
 
-@export var SpawnSpeed : float = 1.0
-@export var ArrowSpeed : float = 100.0
+@export var SpawnSpeed : float = 0.65
+@export var ArrowSpeed : float = 85.0
 @export var ArrowCountRange : Vector2i = Vector2i(3, 6)
 
-@export var SpawnScaling : float = 1
+@export var SpawnScaling : float = 0.8
 @export var SpeedScaling : float = 1
 @export var CountScaling : float = 1
 @export var TurnScaling : float = 1
@@ -22,7 +22,7 @@ extends Node
 var gameOver : bool = false
 
 var activePlayer : Node2D
-var spawn_scale : float = 1
+var spawn_scale : float = 0.8
 var speed_scale : float = 1
 var cnt_scale : float = 1
 var turn_scale : float = 1

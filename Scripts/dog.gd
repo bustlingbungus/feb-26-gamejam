@@ -15,12 +15,14 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	timeout = true
+	
 
 
 func movement():
 	# Setting velocity speed
 	if timeout:
 		velocity.x = speed
+		
 		
 	if caught:
 		velocity.x = 0

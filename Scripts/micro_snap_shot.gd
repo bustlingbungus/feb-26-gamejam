@@ -8,6 +8,7 @@ extends Node2D
 @onready var micro_swticher: Node2D = $"Micro-Swticher"
 @onready var rng = RandomNumberGenerator.new()
 @onready var timer: Timer = $Timer
+@onready var overload: Timer = $Overload
 
 
 var shot = 1
@@ -50,7 +51,8 @@ func caught_result():
 		sound_manager.load_sound("res://Assets/Sounds/SnapShot/pgwrong.mp3")
 		sound_manager.audio_player.play()
 		Global.lose_lives()
-	#await get_tree().create_timer(3).timeout
+	# await get_tree().create_timer(3).timeout
+	
 	micro_swticher.play_anim()
 
 
@@ -66,3 +68,9 @@ func _on_activator_timeout() -> void:
 	var x = rng.randi_range(2, 9)
 	timer.wait_time = x
 	timer.start()
+
+
+func _on_overload_timeout() -> void:
+	Global.lose_lives() #works :3
+	micro_swticher.play_anim()
+	pass # Replace with function body.
